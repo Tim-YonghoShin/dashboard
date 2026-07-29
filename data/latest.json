@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-30T06:05:33.649013+09:00",
+  "updated_at": "2026-07-30T07:31:27.997055+09:00",
   "items": [
     {
       "id": "kospi",
@@ -113,10 +113,10 @@
       "hero": true,
       "description": "미국 달러 대비 원화 환율. 원화 가치가 오르면(환율 하락) 원/달러 값이 낮아짐.",
       "unit": null,
-      "price": 1443.45,
+      "price": 1443.8199,
       "prev_close": 1453.75,
-      "change": -10.3,
-      "change_pct": -0.709
+      "change": -9.9301,
+      "change_pct": -0.683
     },
     {
       "id": "usdjpy",
@@ -126,10 +126,10 @@
       "hero": false,
       "description": "미국 달러 대비 일본 엔화 환율. 엔캐리트레이드·일본은행 통화정책과 밀접하게 연동.",
       "unit": null,
-      "price": 163.371,
+      "price": 163.425,
       "prev_close": 163.842,
-      "change": -0.471,
-      "change_pct": -0.287
+      "change": -0.417,
+      "change_pct": -0.255
     },
     {
       "id": "dxy",
@@ -139,10 +139,10 @@
       "hero": false,
       "description": "유로·엔·파운드 등 주요 6개 통화 대비 달러 가치를 가중평균한 지수. 달러 전반의 강약을 나타냄.",
       "unit": null,
-      "price": 100.824,
+      "price": 100.802,
       "prev_close": 101.328,
-      "change": -0.504,
-      "change_pct": -0.497
+      "change": -0.526,
+      "change_pct": -0.519
     },
     {
       "id": "wti",
@@ -152,10 +152,10 @@
       "hero": true,
       "description": "서부텍사스산 원유 선물가격. 미국 원유 벤치마크이며 글로벌 인플레이션·에너지 비용에 직결.",
       "unit": null,
-      "price": 84.54,
+      "price": 84.32,
       "prev_close": 82.71,
-      "change": 1.83,
-      "change_pct": 2.213
+      "change": 1.61,
+      "change_pct": 1.947
     },
     {
       "id": "gold",
@@ -165,10 +165,10 @@
       "hero": false,
       "description": "금 선물가격. 대표적인 안전자산으로 인플레이션 헤지·달러 약세 시 강세를 보이는 경향.",
       "unit": null,
-      "price": 4123.7998,
+      "price": 4131.2998,
       "prev_close": 4021.5,
-      "change": 102.2998,
-      "change_pct": 2.544
+      "change": 109.7998,
+      "change_pct": 2.73
     },
     {
       "id": "vix",
@@ -192,9 +192,9 @@
       "description": "미국 국채 옵션 기반 변동성 지수. 채권시장판 VIX로, 금리시장 불안 정도를 나타냄.",
       "unit": null,
       "price": 74.181,
-      "prev_close": 77.2128,
-      "change": -3.0318,
-      "change_pct": -3.927
+      "prev_close": 76.0938,
+      "change": -1.9128,
+      "change_pct": -2.514
     },
     {
       "id": "spgsci",
@@ -217,10 +217,10 @@
       "hero": false,
       "description": "유가·미국채10년금리·달러인덱스를 각각 표준화(z-score)해 평균한 자체 합성지수. 공식 지수가 아니라 이 대시보드에서 직접 계산한 값이며, 값이 높을수록 '유가·금리·달러가 동시에 평균보다 높은(매크로 긴축적인)' 국면임을 뜻함.",
       "unit": "zscore",
-      "price": 0.1518,
-      "prev_close": 0.2989,
-      "change": -0.1471,
-      "change_pct": -49.214
+      "price": 0.2078,
+      "prev_close": 0.1518,
+      "change": 0.056,
+      "change_pct": 36.891
     },
     {
       "id": "samsung",
