@@ -15,7 +15,7 @@ import yfinance as yf
 
 ROOT = Path(__file__).resolve().parent.parent
 HISTORY_DIR = ROOT / "data" / "history"
-BACKFILL_PERIOD = "20y"
+BACKFILL_PERIOD = "max"  # 티커별로 거래소에서 제공하는 가장 긴 일별 히스토리 (지수는 보통 수십 년)
 INCREMENTAL_OVERLAP_DAYS = 10  # 마지막 저장일에서 이만큼 앞당겨 재조회 (휴장/정정 대비)
 MAX_RETRIES = 3
 RETRY_DELAY_SEC = 5

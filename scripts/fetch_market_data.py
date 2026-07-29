@@ -68,6 +68,7 @@ def main():
                 "category": t["category"],
                 "name": t["name"],
                 "symbol": t["symbol"],
+                "hero": t.get("hero", False),
                 "price": round(price, 4),
                 "prev_close": round(prev, 4),
                 "change": round(change, 4),

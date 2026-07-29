@@ -1,17 +1,23 @@
 [
-  { "id": "kospi", "category": "국내지수", "name": "코스피", "symbol": "^KS11" },
+  { "id": "kospi", "category": "국내지수", "name": "코스피", "symbol": "^KS11", "hero": true },
   { "id": "kosdaq", "category": "국내지수", "name": "코스닥", "symbol": "^KQ11" },
 
-  { "id": "sp500", "category": "해외지수", "name": "S&P 500", "symbol": "^GSPC" },
-  { "id": "nasdaq", "category": "해외지수", "name": "나스닥", "symbol": "^IXIC" },
+  { "id": "sp500", "category": "해외지수", "name": "S&P 500", "symbol": "^GSPC", "hero": true },
+  { "id": "nasdaq", "category": "해외지수", "name": "나스닥", "symbol": "^IXIC", "hero": true },
   { "id": "dow", "category": "해외지수", "name": "다우존스", "symbol": "^DJI" },
 
-  { "id": "us10y", "category": "채권금리", "name": "미국채 10년", "symbol": "^TNX" },
+  { "id": "us10y", "category": "채권금리", "name": "미국채 10년", "symbol": "^TNX", "hero": true },
 
-  { "id": "usdkrw", "category": "환율", "name": "원/달러", "symbol": "KRW=X" },
+  { "id": "usdkrw", "category": "환율", "name": "원/달러", "symbol": "KRW=X", "hero": true },
   { "id": "usdjpy", "category": "환율", "name": "달러/엔", "symbol": "JPY=X" },
   { "id": "dxy", "category": "환율", "name": "달러인덱스", "symbol": "DX-Y.NYB" },
 
-  { "id": "wti", "category": "원자재", "name": "WTI 유가", "symbol": "CL=F" },
-  { "id": "gold", "category": "원자재", "name": "금", "symbol": "GC=F" }
+  { "id": "wti", "category": "원자재", "name": "WTI 유가", "symbol": "CL=F", "hero": true },
+  { "id": "gold", "category": "원자재", "name": "금", "symbol": "GC=F" },
+
+  { "id": "samsung", "category": "개별종목", "name": "삼성전자", "symbol": "005930.KS" },
+  { "id": "skhynix", "category": "개별종목", "name": "SK하이닉스", "symbol": "000660.KS" },
+  { "id": "apple", "category": "개별종목", "name": "Apple", "symbol": "AAPL" },
+  { "id": "nvidia", "category": "개별종목", "name": "NVIDIA", "symbol": "NVDA" },
+  { "id": "tesla", "category": "개별종목", "name": "Tesla", "symbol": "TSLA" }
 ]

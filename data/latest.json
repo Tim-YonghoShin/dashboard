@@ -1,104 +1,181 @@
 {
-  "updated_at": "2026-07-29T18:27:57.180826+09:00",
+  "updated_at": "2026-07-29T18:46:47.389692+09:00",
   "items": [
     {
+      "id": "kospi",
       "category": "국내지수",
       "name": "코스피",
       "symbol": "^KS11",
+      "hero": true,
       "price": 5663.2402,
       "prev_close": 6023.66,
       "change": -360.4198,
       "change_pct": -5.983
     },
     {
+      "id": "kosdaq",
       "category": "국내지수",
       "name": "코스닥",
       "symbol": "^KQ11",
+      "hero": false,
       "price": 662.68,
       "prev_close": 705.85,
       "change": -43.17,
       "change_pct": -6.116
     },
     {
+      "id": "sp500",
       "category": "해외지수",
       "name": "S&P 500",
       "symbol": "^GSPC",
+      "hero": true,
       "price": 7428.7798,
       "prev_close": 7413.18,
       "change": 15.5998,
       "change_pct": 0.21
     },
     {
+      "id": "nasdaq",
       "category": "해외지수",
       "name": "나스닥",
       "symbol": "^IXIC",
+      "hero": true,
       "price": 24876.9102,
       "prev_close": 24932.082,
       "change": -55.1718,
       "change_pct": -0.221
     },
     {
+      "id": "dow",
       "category": "해외지수",
       "name": "다우존스",
       "symbol": "^DJI",
+      "hero": false,
       "price": 52747.3203,
       "prev_close": 52210.08,
       "change": 537.2403,
       "change_pct": 1.029
     },
     {
+      "id": "us10y",
       "category": "채권금리",
       "name": "미국채 10년",
       "symbol": "^TNX",
+      "hero": true,
       "price": 4.604,
       "prev_close": 4.641,
       "change": -0.037,
       "change_pct": -0.797
     },
     {
+      "id": "usdkrw",
       "category": "환율",
       "name": "원/달러",
       "symbol": "KRW=X",
-      "price": 1450.87,
+      "hero": true,
+      "price": 1449.95,
       "prev_close": 1453.75,
-      "change": -2.88,
-      "change_pct": -0.198
+      "change": -3.8,
+      "change_pct": -0.261
     },
     {
+      "id": "usdjpy",
       "category": "환율",
       "name": "달러/엔",
       "symbol": "JPY=X",
-      "price": 163.54,
+      "hero": false,
+      "price": 163.565,
       "prev_close": 163.842,
-      "change": -0.302,
-      "change_pct": -0.184
+      "change": -0.277,
+      "change_pct": -0.169
     },
     {
+      "id": "dxy",
       "category": "환율",
       "name": "달러인덱스",
       "symbol": "DX-Y.NYB",
-      "price": 101.324,
+      "hero": false,
+      "price": 101.334,
       "prev_close": 101.328,
-      "change": -0.004,
-      "change_pct": -0.004
+      "change": 0.006,
+      "change_pct": 0.006
     },
     {
+      "id": "wti",
       "category": "원자재",
       "name": "WTI 유가",
       "symbol": "CL=F",
-      "price": 81.86,
+      "hero": true,
+      "price": 82.2,
       "prev_close": 82.71,
-      "change": -0.85,
-      "change_pct": -1.028
+      "change": -0.51,
+      "change_pct": -0.617
     },
     {
+      "id": "gold",
       "category": "원자재",
       "name": "금",
       "symbol": "GC=F",
-      "price": 4096.1001,
+      "hero": false,
+      "price": 4093.3,
       "prev_close": 4021.5,
-      "change": 74.6001,
-      "change_pct": 1.855
+      "change": 71.8,
+      "change_pct": 1.785
+    },
+    {
+      "id": "samsung",
+      "category": "개별종목",
+      "name": "삼성전자",
+      "symbol": "005930.KS",
+      "hero": false,
+      "price": 208500.0,
+      "prev_close": 220000.0,
+      "change": -11500.0,
+      "change_pct": -5.227
+    },
+    {
+      "id": "skhynix",
+      "category": "개별종목",
+      "name": "SK하이닉스",
+      "symbol": "000660.KS",
+      "hero": false,
+      "price": 1401000.0,
+      "prev_close": 1550000.0,
+      "change": -149000.0,
+      "change_pct": -9.613
+    },
+    {
+      "id": "apple",
+      "category": "개별종목",
+      "name": "Apple",
+      "symbol": "AAPL",
+      "hero": false,
+      "price": 340.08,
+      "prev_close": 341.2465,
+      "change": -1.1665,
+      "change_pct": -0.342
+    },
+    {
+      "id": "nvidia",
+      "category": "개별종목",
+      "name": "NVIDIA",
+      "symbol": "NVDA",
+      "hero": false,
+      "price": 197.01,
+      "prev_close": 197.63,
+      "change": -0.62,
+      "change_pct": -0.314
+    },
+    {
+      "id": "tesla",
+      "category": "개별종목",
+      "name": "Tesla",
+      "symbol": "TSLA",
+      "hero": false,
+      "price": 307.44,
+      "prev_close": 306.86,
+      "change": 0.58,
+      "change_pct": 0.189
     }
   ]
 }
