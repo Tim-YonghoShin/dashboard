@@ -29,12 +29,22 @@
       <div class="chart-toolbar">
         <span class="toolbar-label">이동평균</span>
         <div class="ma-controls" id="ma-controls"></div>
-        <span class="toolbar-hint">휠로 확대/축소 · 드래그로 이동</span>
+        <span class="toolbar-hint">휠로 확대/축소 · 드래그로 이동 · 클릭으로 포인트 찍기</span>
       </div>
-      <div class="chart-wrap">
+      <div class="chart-wrap" id="chart-wrap">
         <canvas id="compare-chart"></canvas>
         <p class="chart-empty" id="chart-empty">왼쪽 목록에서 지표를 선택하세요</p>
+        <div class="chart-tooltip" id="chart-tooltip" hidden></div>
       </div>
+
+      <section class="points-panel" id="points-panel" hidden>
+        <div class="points-panel-header">
+          <span class="toolbar-label">포인트 비교</span>
+          <button class="text-btn" id="points-clear" type="button">모두 지우기</button>
+        </div>
+        <div class="points-list" id="points-list"></div>
+        <div class="points-compare" id="points-compare"></div>
+      </section>
     </section>
   </main>
 

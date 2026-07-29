@@ -375,6 +375,181 @@ body {
 
 .chart-empty[hidden] { display: none; }
 
+.chart-tooltip {
+  position: absolute;
+  z-index: 20;
+  pointer-events: none;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 10px;
+  min-width: 140px;
+  box-shadow: var(--shadow-lg, 0 8px 20px rgba(0, 0, 0, 0.3));
+}
+
+.chart-tooltip[hidden] { display: none; }
+
+.chart-tooltip-date {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.chart-tooltip-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  padding: 2px 0;
+}
+
+.chart-tooltip-row .dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  flex: none;
+}
+
+.chart-tooltip-row .name {
+  color: var(--text-secondary);
+  flex: 1;
+}
+
+.chart-tooltip-row .value {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* 포인트 비교 패널 */
+
+.points-panel {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+.points-panel[hidden] { display: none; }
+
+.points-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.text-btn {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 11px;
+  cursor: pointer;
+  padding: 0;
+}
+
+.text-btn:hover { color: var(--text-secondary); }
+
+.points-list {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  margin-bottom: 14px;
+}
+
+.point-card {
+  flex: none;
+  min-width: 150px;
+  background: var(--surface-1);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 11px;
+}
+
+.point-card .date {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+
+.point-remove {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 11px;
+  padding: 0;
+}
+
+.point-remove:hover { color: var(--up); }
+
+.point-card .row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  color: var(--text-secondary);
+  padding: 2px 0;
+}
+
+.point-card .row .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.point-card .row .v {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.points-compare { overflow-x: auto; }
+
+.compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.compare-table th,
+.compare-table td {
+  padding: 7px 10px;
+  text-align: right;
+  border-bottom: 1px solid var(--border);
+}
+
+.compare-table th:first-child,
+.compare-table td:first-child {
+  text-align: left;
+  color: var(--text-secondary);
+}
+
+.compare-table th {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.compare-table td.up { color: var(--up); }
+.compare-table td.down { color: var(--down); }
+.compare-table td.flat,
+.compare-table td.muted { color: var(--text-muted); }
+
+.compare-table .muted { color: var(--text-muted); font-size: 10px; }
+
+.compare-table .total-row td {
+  font-weight: 700;
+  border-top: 1px solid var(--border);
+  border-bottom: none;
+}
+
 @media (max-width: 860px) {
   .explorer { flex-direction: column; }
   .ticker-nav {

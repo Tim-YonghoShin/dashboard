@@ -7,6 +7,8 @@
   { "id": "dow", "category": "해외지수", "name": "다우존스", "symbol": "^DJI" },
 
   { "id": "us10y", "category": "채권금리", "name": "미국채 10년", "symbol": "^TNX", "hero": true },
+  { "id": "us30y", "category": "채권금리", "name": "미국채 30년", "symbol": "^TYX" },
+  { "id": "us20y", "category": "채권금리", "name": "미국채 20년+ (TLT)", "symbol": "TLT" },
 
   { "id": "usdkrw", "category": "환율", "name": "원/달러", "symbol": "KRW=X", "hero": true },
   { "id": "usdjpy", "category": "환율", "name": "달러/엔", "symbol": "JPY=X" },

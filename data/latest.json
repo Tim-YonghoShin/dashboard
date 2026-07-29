@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-29T18:46:47.389692+09:00",
+  "updated_at": "2026-07-29T19:35:14.568936+09:00",
   "items": [
     {
       "id": "kospi",
@@ -68,15 +68,37 @@
       "change_pct": -0.797
     },
     {
+      "id": "us30y",
+      "category": "채권금리",
+      "name": "미국채 30년",
+      "symbol": "^TYX",
+      "hero": false,
+      "price": 5.096,
+      "prev_close": 5.125,
+      "change": -0.029,
+      "change_pct": -0.566
+    },
+    {
+      "id": "us20y",
+      "category": "채권금리",
+      "name": "미국채 20년+ (TLT)",
+      "symbol": "TLT",
+      "hero": false,
+      "price": 84.24,
+      "prev_close": 84.0743,
+      "change": 0.1657,
+      "change_pct": 0.197
+    },
+    {
       "id": "usdkrw",
       "category": "환율",
       "name": "원/달러",
       "symbol": "KRW=X",
       "hero": true,
-      "price": 1449.95,
+      "price": 1450.38,
       "prev_close": 1453.75,
-      "change": -3.8,
-      "change_pct": -0.261
+      "change": -3.37,
+      "change_pct": -0.232
     },
     {
       "id": "usdjpy",
@@ -84,10 +106,10 @@
       "name": "달러/엔",
       "symbol": "JPY=X",
       "hero": false,
-      "price": 163.565,
+      "price": 163.662,
       "prev_close": 163.842,
-      "change": -0.277,
-      "change_pct": -0.169
+      "change": -0.18,
+      "change_pct": -0.11
     },
     {
       "id": "dxy",
@@ -95,10 +117,10 @@
       "name": "달러인덱스",
       "symbol": "DX-Y.NYB",
       "hero": false,
-      "price": 101.334,
+      "price": 101.404,
       "prev_close": 101.328,
-      "change": 0.006,
-      "change_pct": 0.006
+      "change": 0.076,
+      "change_pct": 0.075
     },
     {
       "id": "wti",
@@ -106,10 +128,10 @@
       "name": "WTI 유가",
       "symbol": "CL=F",
       "hero": true,
-      "price": 82.2,
+      "price": 82.67,
       "prev_close": 82.71,
-      "change": -0.51,
-      "change_pct": -0.617
+      "change": -0.04,
+      "change_pct": -0.048
     },
     {
       "id": "gold",
@@ -117,10 +139,10 @@
       "name": "금",
       "symbol": "GC=F",
       "hero": false,
-      "price": 4093.3,
+      "price": 4089.8999,
       "prev_close": 4021.5,
-      "change": 71.8,
-      "change_pct": 1.785
+      "change": 68.3999,
+      "change_pct": 1.701
     },
     {
       "id": "samsung",
