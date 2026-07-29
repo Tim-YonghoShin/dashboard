@@ -51,7 +51,7 @@ async function callGemini(apiKey, message, context) {
             parts: [{ text: `현재 화면 데이터(JSON):\n${safeContext}\n\n사용자 질문:\n${safeMessage}` }],
           },
         ],
-        generationConfig: { maxOutputTokens: 1024, temperature: 0.4 },
+        generationConfig: { maxOutputTokens: 4096, temperature: 0.4 },
       }),
     }
   );
@@ -62,8 +62,11 @@ async function callGemini(apiKey, message, context) {
     err.status = res.status;
     throw err;
   }
-  const text = (data.candidates?.[0]?.content?.parts || []).map((p) => p.text || "").join("");
-  return text || "(응답이 비어있습니다)";
+  const candidate = data.candidates?.[0];
+  const text = (candidate?.content?.parts || []).map((p) => p.text || "").join("");
+  const truncatedNote =
+    candidate?.finishReason === "MAX_TOKENS" ? "\n\n(⚠ 답변이 길이 제한으로 잘렸어요. 더 구체적으로 나눠서 물어봐 주세요.)" : "";
+  return (text || "(응답이 비어있습니다)") + truncatedNote;
 }
 
 (function () {
