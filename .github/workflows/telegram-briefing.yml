@@ -1,0 +1,40 @@
+name: Telegram market briefing
+
+on:
+  schedule:
+    - cron: "0 23 * * 0-4" # KST 08:00 (월~금)
+    - cron: "0 9 * * 1-5" # KST 18:00 (월~금)
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  briefing:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r scripts/requirements.txt
+
+      - name: Refresh market data snapshot
+        run: python scripts/fetch_market_data.py
+
+      - name: Send Telegram briefing
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python scripts/send_telegram_briefing.py
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/latest.json
+          git diff --cached --quiet || git commit -m "chore: update market data snapshot"
+          git push

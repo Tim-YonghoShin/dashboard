@@ -1,0 +1,17 @@
+[
+  { "id": "kospi", "category": "국내지수", "name": "코스피", "symbol": "^KS11" },
+  { "id": "kosdaq", "category": "국내지수", "name": "코스닥", "symbol": "^KQ11" },
+
+  { "id": "sp500", "category": "해외지수", "name": "S&P 500", "symbol": "^GSPC" },
+  { "id": "nasdaq", "category": "해외지수", "name": "나스닥", "symbol": "^IXIC" },
+  { "id": "dow", "category": "해외지수", "name": "다우존스", "symbol": "^DJI" },
+
+  { "id": "us10y", "category": "채권금리", "name": "미국채 10년", "symbol": "^TNX" },
+
+  { "id": "usdkrw", "category": "환율", "name": "원/달러", "symbol": "KRW=X" },
+  { "id": "usdjpy", "category": "환율", "name": "달러/엔", "symbol": "JPY=X" },
+  { "id": "dxy", "category": "환율", "name": "달러인덱스", "symbol": "DX-Y.NYB" },
+
+  { "id": "wti", "category": "원자재", "name": "WTI 유가", "symbol": "CL=F" },
+  { "id": "gold", "category": "원자재", "name": "금", "symbol": "GC=F" }
+]

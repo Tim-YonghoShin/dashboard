@@ -1,0 +1,104 @@
+{
+  "updated_at": "2026-07-29T18:27:57.180826+09:00",
+  "items": [
+    {
+      "category": "국내지수",
+      "name": "코스피",
+      "symbol": "^KS11",
+      "price": 5663.2402,
+      "prev_close": 6023.66,
+      "change": -360.4198,
+      "change_pct": -5.983
+    },
+    {
+      "category": "국내지수",
+      "name": "코스닥",
+      "symbol": "^KQ11",
+      "price": 662.68,
+      "prev_close": 705.85,
+      "change": -43.17,
+      "change_pct": -6.116
+    },
+    {
+      "category": "해외지수",
+      "name": "S&P 500",
+      "symbol": "^GSPC",
+      "price": 7428.7798,
+      "prev_close": 7413.18,
+      "change": 15.5998,
+      "change_pct": 0.21
+    },
+    {
+      "category": "해외지수",
+      "name": "나스닥",
+      "symbol": "^IXIC",
+      "price": 24876.9102,
+      "prev_close": 24932.082,
+      "change": -55.1718,
+      "change_pct": -0.221
+    },
+    {
+      "category": "해외지수",
+      "name": "다우존스",
+      "symbol": "^DJI",
+      "price": 52747.3203,
+      "prev_close": 52210.08,
+      "change": 537.2403,
+      "change_pct": 1.029
+    },
+    {
+      "category": "채권금리",
+      "name": "미국채 10년",
+      "symbol": "^TNX",
+      "price": 4.604,
+      "prev_close": 4.641,
+      "change": -0.037,
+      "change_pct": -0.797
+    },
+    {
+      "category": "환율",
+      "name": "원/달러",
+      "symbol": "KRW=X",
+      "price": 1450.87,
+      "prev_close": 1453.75,
+      "change": -2.88,
+      "change_pct": -0.198
+    },
+    {
+      "category": "환율",
+      "name": "달러/엔",
+      "symbol": "JPY=X",
+      "price": 163.54,
+      "prev_close": 163.842,
+      "change": -0.302,
+      "change_pct": -0.184
+    },
+    {
+      "category": "환율",
+      "name": "달러인덱스",
+      "symbol": "DX-Y.NYB",
+      "price": 101.324,
+      "prev_close": 101.328,
+      "change": -0.004,
+      "change_pct": -0.004
+    },
+    {
+      "category": "원자재",
+      "name": "WTI 유가",
+      "symbol": "CL=F",
+      "price": 81.86,
+      "prev_close": 82.71,
+      "change": -0.85,
+      "change_pct": -1.028
+    },
+    {
+      "category": "원자재",
+      "name": "금",
+      "symbol": "GC=F",
+      "price": 4096.1001,
+      "prev_close": 4021.5,
+      "change": 74.6001,
+      "change_pct": 1.855
+    }
+  ]
+}
