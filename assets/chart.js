@@ -91,6 +91,49 @@ const DashboardChart = (() => {
     },
   };
 
+  // 찍어둔 포인트를 세로 가이드선 + 시리즈별 점으로 차트 위에 표시
+  const pinnedPointsPlugin = {
+    id: "pinnedPoints",
+    afterDatasetsDraw(c) {
+      if (!pinnedPoints.length) return;
+      const { top, bottom, left, right } = c.chartArea;
+      const ctx = c.ctx;
+      const surface = cssVar("--surface-1");
+      const guideColor = cssVar("--border");
+
+      pinnedPoints.forEach((p) => {
+        const x = c.scales.x.getPixelForValue(new Date(p.date).getTime());
+        if (x < left || x > right) return;
+
+        ctx.save();
+        ctx.beginPath();
+        ctx.moveTo(x, top);
+        ctx.lineTo(x, bottom);
+        ctx.lineWidth = 1;
+        ctx.strokeStyle = guideColor;
+        ctx.setLineDash([2, 3]);
+        ctx.stroke();
+        ctx.restore();
+
+        p.values.forEach((v) => {
+          const idx = selection.findIndex((s) => s.id === v.seriesId);
+          const scale = idx >= 0 ? c.scales[`y${idx}`] : null;
+          if (!scale) return;
+          const y = scale.getPixelForValue(v.price);
+          ctx.save();
+          ctx.beginPath();
+          ctx.arc(x, y, 5, 0, Math.PI * 2);
+          ctx.fillStyle = seriesColor(idx);
+          ctx.fill();
+          ctx.lineWidth = 2;
+          ctx.strokeStyle = surface;
+          ctx.stroke();
+          ctx.restore();
+        });
+      });
+    },
+  };
+
   function isLight() {
     return document.documentElement.dataset.theme === "light";
   }
@@ -356,6 +399,7 @@ const DashboardChart = (() => {
       pointsListEl.appendChild(card);
     });
     renderCompare();
+    if (chart) chart.update("none"); // 차트 위 포인트 마커 갱신
   }
 
   function compareRow(a, b, highlight) {
@@ -402,7 +446,7 @@ const DashboardChart = (() => {
     chart = new Chart(canvas, {
       type: "line",
       data: { datasets: [] },
-      plugins: [crosshairPlugin],
+      plugins: [crosshairPlugin, pinnedPointsPlugin],
       options: {
         responsive: true,
         maintainAspectRatio: false,
