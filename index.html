@@ -55,11 +55,29 @@
 
 <div class="sidebar-tooltip" id="sidebar-tooltip" hidden></div>
 
+<button class="chat-fab" id="chat-fab" type="button" aria-label="차트 도우미 열기">💬</button>
+
+<div class="chat-panel" id="chat-panel" hidden>
+  <div class="chat-panel-head">
+    <div>
+      <span class="chat-title">차트 도우미</span>
+      <span class="chat-sub">지금 보고 있는 지표·구간·포인트를 근거로 답해요</span>
+    </div>
+    <button class="modal-close" id="chat-close" type="button" aria-label="닫기">✕</button>
+  </div>
+  <div class="chat-messages" id="chat-messages"></div>
+  <form class="chat-input-row" id="chat-form">
+    <input class="chat-input" id="chat-input" type="text" placeholder="예: 두 지수 언제부터 벌어졌어?" autocomplete="off">
+    <button class="chat-send" type="submit" aria-label="전송">➤</button>
+  </form>
+</div>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8/hammer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@2/dist/chartjs-plugin-zoom.min.js"></script>
 <script src="assets/chart.js"></script>
 <script src="assets/app.js"></script>
+<script src="assets/chat.js"></script>
 </body>
 </html>

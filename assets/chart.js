@@ -597,8 +597,49 @@ const DashboardChart = (() => {
     rebuild();
   }
 
+  // 채팅 도우미에게 "지금 화면에 보이는 것"을 요약해서 넘기기 위한 스냅샷.
+  function getContext() {
+    const visibleRange =
+      chart && chart.scales.x && chart.scales.x.min != null
+        ? {
+            from: new Date(chart.scales.x.min).toISOString().slice(0, 10),
+            to: new Date(chart.scales.x.max).toISOString().slice(0, 10),
+          }
+        : null;
+
+    const series = selection.map((item) => {
+      const points = resolvedSeries.get(item.id) || [];
+      const inRange = visibleRange
+        ? points.filter((p) => p.t >= chart.scales.x.min && p.t <= chart.scales.x.max)
+        : points;
+      const first = inRange[0];
+      const last = inRange[inRange.length - 1];
+      const changePct =
+        first && last && first.y ? ((last.y - first.y) / Math.abs(first.y)) * 100 : null;
+      return {
+        name: item.name,
+        category: item.category,
+        unit: item.unit || null,
+        visibleStart: first ? { date: first.x, value: first.y } : null,
+        visibleEnd: last ? { date: last.x, value: last.y } : null,
+        changePctInVisibleRange: changePct !== null ? Number(changePct.toFixed(2)) : null,
+      };
+    });
+
+    return {
+      visibleRange,
+      rangePreset: RANGE_PRESETS.find((p) => p.days === activeRangeDays)?.label || "커스텀(줌/팬)",
+      activeMovingAverages: [...activeMAPeriods],
+      selectedSeries: series,
+      pinnedPoints: pinnedPoints.map((p) => ({
+        date: p.date,
+        values: p.values.map((v) => ({ name: v.name, price: v.price })),
+      })),
+    };
+  }
+
   renderRangeControls();
   renderMAControls();
 
-  return { setSelection, applyTheme, seriesColor };
+  return { setSelection, applyTheme, seriesColor, getContext };
 })();
