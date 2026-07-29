@@ -6,8 +6,7 @@ function categoryColorVar(category) {
   return `var(--cat-${category})`;
 }
 
-const heroGridEl = document.getElementById("hero-grid");
-const sectionsEl = document.getElementById("sections");
+const tickerNavEl = document.getElementById("ticker-nav");
 const updatedAtEl = document.getElementById("updated-at");
 const themeToggleEl = document.getElementById("theme-toggle");
 
@@ -32,10 +31,6 @@ function deltaDirection(pct) {
   return pct > 0 ? "up" : "down";
 }
 
-function deltaArrow(direction) {
-  return { up: "▲", down: "▼", flat: "–" }[direction];
-}
-
 function deltaText(item) {
   const direction = deltaDirection(item.change_pct);
   const pctText = item.change_pct === null || item.change_pct === undefined
@@ -44,7 +39,7 @@ function deltaText(item) {
   return { direction, pctText };
 }
 
-/* ---- 히스토리 CSV (스파크라인 + 차트 모달 공용) ---- */
+/* ---- 히스토리 CSV (차트 모듈과 공용) ---- */
 
 function parseHistoryCsv(text) {
   return text
@@ -57,114 +52,92 @@ function parseHistoryCsv(text) {
     });
 }
 
-const SPARKLINE_POINTS = 12;
-const SPARKLINE_WIDTH = 100;
-const SPARKLINE_HEIGHT = 28;
+/* ---- 선택 상태 ---- */
 
-function sparklinePoints(closes) {
-  const min = Math.min(...closes);
-  const max = Math.max(...closes);
-  const range = max - min || 1;
-  return closes
-    .map((c, i) => {
-      const x = (i / (closes.length - 1)) * SPARKLINE_WIDTH;
-      const y = SPARKLINE_HEIGHT - ((c - min) / range) * SPARKLINE_HEIGHT;
-      return `${x.toFixed(1)},${y.toFixed(1)}`;
-    })
-    .join(" ");
-}
+let itemsById = new Map();
+let selectedIds = [];
+let initialized = false;
 
-async function loadSparkline(id) {
-  try {
-    const res = await fetch(`data/history/${id}.csv?t=${Date.now()}`, { cache: "no-store" });
-    if (!res.ok) return null;
-    const rows = parseHistoryCsv(await res.text());
-    const closes = rows.slice(-SPARKLINE_POINTS).map((r) => r.close).filter((c) => !Number.isNaN(c));
-    return closes.length >= 2 ? closes : null;
-  } catch {
-    return null;
+function toggleSelection(item) {
+  const idx = selectedIds.indexOf(item.id);
+  if (idx >= 0) {
+    selectedIds.splice(idx, 1);
+  } else {
+    if (selectedIds.length >= MAX_SELECTED) selectedIds.shift();
+    selectedIds.push(item.id);
   }
+  syncSelection();
+}
+window.dashboardToggleSelection = toggleSelection;
+
+function syncSelection() {
+  tickerNavEl.querySelectorAll(".ticker-row").forEach((row) => {
+    const idx = selectedIds.indexOf(row.dataset.id);
+    row.classList.toggle("selected", idx >= 0);
+    if (idx >= 0) row.style.setProperty("--series-color", DashboardChart.seriesColor(idx));
+    else row.style.removeProperty("--series-color");
+  });
+  const selectedItems = selectedIds.map((id) => itemsById.get(id)).filter(Boolean);
+  DashboardChart.setSelection(selectedItems);
 }
 
 /* ---- 렌더링 ---- */
 
-function renderHero(items) {
-  const heroItems = items.filter((item) => item.hero);
-  heroGridEl.innerHTML = "";
-  for (const item of heroItems) {
-    const { direction, pctText } = deltaText(item);
-    const tile = document.createElement("div");
-    tile.className = "hero-tile";
-    tile.tabIndex = 0;
-    tile.style.setProperty("--cat-color", categoryColorVar(item.category));
-    tile.innerHTML = `
-      <span class="hero-label">${item.name}</span>
-      <div class="hero-value">${numberFmt.format(item.price)}</div>
-      <span class="tile-delta ${direction}">${deltaArrow(direction)} ${pctText}</span>
-    `;
-    tile.addEventListener("click", () => DashboardChart.open(item));
-    tile.addEventListener("keydown", (e) => {
-      if (e.key === "Enter" || e.key === " ") DashboardChart.open(item);
-    });
-    heroGridEl.appendChild(tile);
-  }
-}
-
-function renderTile(item) {
+function renderTickerRow(item) {
   const { direction, pctText } = deltaText(item);
-
-  const tile = document.createElement("div");
-  tile.className = "tile";
-  tile.tabIndex = 0;
-  tile.style.setProperty("--cat-color", categoryColorVar(item.category));
-  tile.innerHTML = `
-    <span class="tile-label">${item.name}</span>
-    <span class="tile-value">${numberFmt.format(item.price)}</span>
-    <svg class="tile-sparkline" width="${SPARKLINE_WIDTH}" height="${SPARKLINE_HEIGHT}" viewBox="0 0 ${SPARKLINE_WIDTH} ${SPARKLINE_HEIGHT}" preserveAspectRatio="none" aria-hidden="true"></svg>
-    <span class="tile-delta ${direction}">${deltaArrow(direction)} ${pctText}</span>
+  const row = document.createElement("div");
+  row.className = "ticker-row";
+  row.dataset.id = item.id;
+  row.tabIndex = 0;
+  row.innerHTML = `
+    <span class="swatch" aria-hidden="true"></span>
+    <span class="ticker-row-name">${item.name}</span>
+    <span class="ticker-row-price mono">${numberFmt.format(item.price)}</span>
+    <span class="ticker-row-delta ${direction}">${pctText}</span>
   `;
-  tile.addEventListener("click", () => DashboardChart.open(item));
-  tile.addEventListener("keydown", (e) => {
-    if (e.key === "Enter" || e.key === " ") DashboardChart.open(item);
+  row.addEventListener("click", () => toggleSelection(item));
+  row.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      toggleSelection(item);
+    }
   });
-
-  loadSparkline(item.id).then((closes) => {
-    if (!closes) return;
-    const svg = tile.querySelector(".tile-sparkline");
-    svg.innerHTML = `<polyline points="${sparklinePoints(closes)}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />`;
-  });
-
-  return tile;
+  return row;
 }
 
-function renderSections(items) {
+function renderTickerNav(items) {
   const byCategory = new Map();
   for (const item of items) {
     if (!byCategory.has(item.category)) byCategory.set(item.category, []);
     byCategory.get(item.category).push(item);
   }
 
-  sectionsEl.innerHTML = "";
+  tickerNavEl.innerHTML = "";
   for (const [category, categoryItems] of byCategory) {
-    const section = document.createElement("section");
+    const group = document.createElement("div");
+    group.className = "cat-group";
 
-    const title = document.createElement("h2");
-    title.className = "section-title";
-    title.style.setProperty("--cat-color", categoryColorVar(category));
-    title.innerHTML = `<span class="dot" aria-hidden="true"></span> ${category}`;
-    section.appendChild(title);
+    const header = document.createElement("button");
+    header.type = "button";
+    header.className = "cat-header";
+    header.style.setProperty("--cat-color", categoryColorVar(category));
+    header.innerHTML = `<span class="dot" aria-hidden="true"></span><span>${category}</span><span class="chevron" aria-hidden="true">▾</span>`;
+    header.addEventListener("click", () => group.classList.toggle("collapsed"));
+    group.appendChild(header);
 
-    const grid = document.createElement("div");
-    grid.className = "tile-grid";
-    for (const item of categoryItems) grid.appendChild(renderTile(item));
-    section.appendChild(grid);
+    const itemsWrap = document.createElement("div");
+    itemsWrap.className = "cat-items";
+    const inner = document.createElement("div");
+    for (const item of categoryItems) inner.appendChild(renderTickerRow(item));
+    itemsWrap.appendChild(inner);
+    group.appendChild(itemsWrap);
 
-    sectionsEl.appendChild(section);
+    tickerNavEl.appendChild(group);
   }
 }
 
 function renderError(message) {
-  sectionsEl.innerHTML = `<div class="error-banner">${message}</div>`;
+  tickerNavEl.innerHTML = `<div class="error-banner">${message}</div>`;
 }
 
 async function loadData() {
@@ -173,8 +146,16 @@ async function loadData() {
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const data = await res.json();
     updatedAtEl.textContent = formatUpdatedAt(data.updated_at);
-    renderHero(data.items);
-    renderSections(data.items);
+
+    itemsById = new Map(data.items.map((item) => [item.id, item]));
+    renderTickerNav(data.items);
+
+    if (!initialized) {
+      initialized = true;
+      const first = data.items.find((i) => i.hero) || data.items[0];
+      if (first) selectedIds = [first.id];
+    }
+    syncSelection();
   } catch (err) {
     console.error("데이터 로드 실패:", err);
     updatedAtEl.textContent = "갱신 실패";
