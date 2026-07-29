@@ -8,7 +8,8 @@ const RANGE_PRESETS = [
   { label: "전체", days: null },
 ];
 const DEFAULT_RANGE_LABEL = "1년";
-const MA_WINDOW = 20;
+const MA_PERIODS = [5, 20, 60, 120];
+const DEFAULT_MA_PERIODS = [20];
 
 // dataviz 카테고리 팔레트에서 all-pairs 검증된 슬롯 위주로 4개 선택(blue/aqua/violet/red)
 const SERIES_COLORS = [
@@ -19,14 +20,36 @@ const SERIES_COLORS = [
 ];
 const MAX_SELECTED = SERIES_COLORS.length;
 
+const crosshairPlugin = {
+  id: "crosshair",
+  afterDatasetsDraw(chart) {
+    const active = chart.getActiveElements();
+    if (!active.length) return;
+    const { top, bottom } = chart.chartArea;
+    const x = active[0].element.x;
+    const ctx = chart.ctx;
+    ctx.save();
+    ctx.beginPath();
+    ctx.moveTo(x, top);
+    ctx.lineTo(x, bottom);
+    ctx.lineWidth = 1;
+    ctx.strokeStyle = getComputedStyle(document.documentElement).getPropertyValue("--text-muted").trim();
+    ctx.setLineDash([4, 4]);
+    ctx.stroke();
+    ctx.restore();
+  },
+};
+
 const DashboardChart = (() => {
   let chart = null;
   let selection = []; // ordered array of ticker item objects
   const dataCache = new Map(); // id -> Promise<[{date, close}]>
   let activeRangeDays = RANGE_PRESETS.find((p) => p.label === DEFAULT_RANGE_LABEL).days;
+  let activeMAPeriods = [...DEFAULT_MA_PERIODS];
 
   const legendEl = document.getElementById("chart-legend");
   const rangeControlsEl = document.getElementById("range-controls");
+  const maControlsEl = document.getElementById("ma-controls");
   const emptyEl = document.getElementById("chart-empty");
   const canvas = document.getElementById("compare-chart");
 
@@ -52,14 +75,14 @@ const DashboardChart = (() => {
   }
 
   function computeMA(points, window) {
-    const out = new Array(points.length).fill(null);
+    const out = [];
     let sum = 0;
     for (let i = 0; i < points.length; i++) {
       sum += points[i].y;
       if (i >= window) sum -= points[i - window].y;
-      if (i >= window - 1) out[i] = { x: points[i].x, y: sum / window };
+      if (i >= window - 1) out.push({ x: points[i].x, y: sum / window });
     }
-    return out.filter(Boolean);
+    return out;
   }
 
   async function loadSeries(id) {
@@ -110,9 +133,29 @@ const DashboardChart = (() => {
         activeRangeDays = preset.days;
         rangeControlsEl.querySelectorAll(".range-btn").forEach((b) => b.classList.remove("active"));
         btn.classList.add("active");
+        if (chart) chart.resetZoom();
         applyRange();
+        recalcYRanges();
       });
       rangeControlsEl.appendChild(btn);
+    }
+  }
+
+  function renderMAControls() {
+    maControlsEl.innerHTML = "";
+    for (const period of MA_PERIODS) {
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "range-btn" + (activeMAPeriods.includes(period) ? " active" : "");
+      btn.textContent = `MA${period}`;
+      btn.addEventListener("click", () => {
+        activeMAPeriods = activeMAPeriods.includes(period)
+          ? activeMAPeriods.filter((p) => p !== period)
+          : [...activeMAPeriods, period].sort((a, b) => a - b);
+        btn.classList.toggle("active");
+        rebuild();
+      });
+      maControlsEl.appendChild(btn);
     }
   }
 
@@ -138,15 +181,41 @@ const DashboardChart = (() => {
     chart.update();
   }
 
+  function recalcYRanges() {
+    if (!chart || !chart.scales.x) return;
+    const xMin = chart.scales.x.min;
+    const xMax = chart.scales.x.max;
+    selection.forEach((item, i) => {
+      const scaleId = `y${i}`;
+      const priceDs = chart.data.datasets.find((d) => d.yAxisID === scaleId && d.isPrice);
+      if (!priceDs || !chart.options.scales[scaleId]) return;
+      const visible = priceDs.data.filter((p) => {
+        const t = new Date(p.x).getTime();
+        return t >= xMin && t <= xMax;
+      });
+      if (!visible.length) return;
+      const values = visible.map((p) => p.y);
+      const min = Math.min(...values);
+      const max = Math.max(...values);
+      const pad = (max - min) * 0.1 || Math.abs(max) * 0.05 || 1;
+      chart.options.scales[scaleId].min = min - pad;
+      chart.options.scales[scaleId].max = max + pad;
+    });
+    chart.update("none");
+  }
+
   function ensureChart() {
     if (chart) return;
     chart = new Chart(canvas, {
       type: "line",
       data: { datasets: [] },
+      plugins: [crosshairPlugin],
       options: {
         responsive: true,
         maintainAspectRatio: false,
-        interaction: { mode: "index", intersect: false },
+        // 'index'는 배열 위치로 매칭돼 시리즈마다 거래일수가 다르면 값이 어긋난다.
+        // 'x'는 각 데이터셋에서 실제 x(날짜)값이 가장 가까운 점을 독립적으로 찾는다.
+        interaction: { mode: "x", intersect: false },
         plugins: {
           legend: { display: false },
           tooltip: {
@@ -162,6 +231,26 @@ const DashboardChart = (() => {
               label: (ctx) => {
                 const v = ctx.parsed.y;
                 return `  ${ctx.dataset.label}: ${v.toLocaleString("ko-KR", { maximumFractionDigits: 2 })}`;
+              },
+            },
+          },
+          zoom: {
+            limits: { x: { min: "original", max: "original" } },
+            pan: {
+              enabled: true,
+              mode: "x",
+              onPanComplete: () => {
+                rangeControlsEl.querySelectorAll(".range-btn").forEach((b) => b.classList.remove("active"));
+                recalcYRanges();
+              },
+            },
+            zoom: {
+              wheel: { enabled: true, speed: 0.12 },
+              pinch: { enabled: true },
+              mode: "x",
+              onZoomComplete: () => {
+                rangeControlsEl.querySelectorAll(".range-btn").forEach((b) => b.classList.remove("active"));
+                recalcYRanges();
               },
             },
           },
@@ -218,6 +307,7 @@ const DashboardChart = (() => {
         label: item.name,
         data: points,
         yAxisID: `y${i}`,
+        isPrice: true,
         borderColor: color,
         backgroundColor: hexToRgba(color, 0.08),
         borderWidth: 2,
@@ -227,22 +317,26 @@ const DashboardChart = (() => {
         tension: 0.15,
         fill: selection.length === 1,
       });
-      if (points.length > MA_WINDOW) {
+      activeMAPeriods.forEach((period, mi) => {
+        if (points.length <= period) return;
+        const alpha = Math.max(0.65 - mi * 0.13, 0.22);
         datasets.push({
-          label: `${item.name} MA${MA_WINDOW}`,
-          data: computeMA(points, MA_WINDOW),
+          label: `${item.name} MA${period}`,
+          data: computeMA(points, period),
           yAxisID: `y${i}`,
-          borderColor: hexToRgba(color, 0.55),
+          borderColor: hexToRgba(color, alpha),
           borderWidth: 1.5,
           borderDash: [4, 3],
           pointRadius: 0,
+          pointHoverRadius: 2,
           tension: 0.15,
         });
-      }
+      });
     });
     chart.data.datasets = datasets;
     chart.update();
     applyRange();
+    recalcYRanges();
     renderLegend();
   }
 
@@ -264,6 +358,7 @@ const DashboardChart = (() => {
   }
 
   renderRangeControls();
+  renderMAControls();
 
   return { setSelection, applyTheme, seriesColor };
 })();

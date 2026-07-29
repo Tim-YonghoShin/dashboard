@@ -26,6 +26,11 @@
         <div class="chart-legend" id="chart-legend"></div>
         <div class="range-controls" id="range-controls"></div>
       </div>
+      <div class="chart-toolbar">
+        <span class="toolbar-label">이동평균</span>
+        <div class="ma-controls" id="ma-controls"></div>
+        <span class="toolbar-hint">휠로 확대/축소 · 드래그로 이동</span>
+      </div>
       <div class="chart-wrap">
         <canvas id="compare-chart"></canvas>
         <p class="chart-empty" id="chart-empty">왼쪽 목록에서 지표를 선택하세요</p>
@@ -40,6 +45,8 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8/hammer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@2/dist/chartjs-plugin-zoom.min.js"></script>
 <script src="assets/chart.js"></script>
 <script src="assets/app.js"></script>
 </body>
