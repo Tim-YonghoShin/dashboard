@@ -2,14 +2,9 @@ const DATA_URL = "data/latest.json";
 const CLIENT_REFRESH_MS = 5 * 60 * 1000;
 const THEME_STORAGE_KEY = "dashboard-theme";
 
-const CATEGORY_ICONS = {
-  "국내지수": "🇰🇷",
-  "해외지수": "🌍",
-  "채권금리": "💵",
-  "환율": "💱",
-  "원자재": "🛢️",
-  "개별종목": "📈",
-};
+function categoryColorVar(category) {
+  return `var(--cat-${category})`;
+}
 
 const heroGridEl = document.getElementById("hero-grid");
 const sectionsEl = document.getElementById("sections");
@@ -101,6 +96,7 @@ function renderHero(items) {
     const tile = document.createElement("div");
     tile.className = "hero-tile";
     tile.tabIndex = 0;
+    tile.style.setProperty("--cat-color", categoryColorVar(item.category));
     tile.innerHTML = `
       <span class="hero-label">${item.name}</span>
       <div class="hero-value">${numberFmt.format(item.price)}</div>
@@ -120,6 +116,7 @@ function renderTile(item) {
   const tile = document.createElement("div");
   tile.className = "tile";
   tile.tabIndex = 0;
+  tile.style.setProperty("--cat-color", categoryColorVar(item.category));
   tile.innerHTML = `
     <span class="tile-label">${item.name}</span>
     <span class="tile-value">${numberFmt.format(item.price)}</span>
@@ -153,7 +150,8 @@ function renderSections(items) {
 
     const title = document.createElement("h2");
     title.className = "section-title";
-    title.innerHTML = `<span aria-hidden="true">${CATEGORY_ICONS[category] || "•"}</span> ${category}`;
+    title.style.setProperty("--cat-color", categoryColorVar(category));
+    title.innerHTML = `<span class="dot" aria-hidden="true"></span> ${category}`;
     section.appendChild(title);
 
     const grid = document.createElement("div");
@@ -187,23 +185,22 @@ async function loadData() {
 /* ---- 테마 토글 ---- */
 
 function applyTheme(theme) {
-  if (theme === "light" || theme === "dark") {
-    document.documentElement.dataset.theme = theme;
+  // 기본 테마는 dark — data-theme="light"일 때만 라이트로 전환
+  if (theme === "light") {
+    document.documentElement.dataset.theme = "light";
   } else {
     delete document.documentElement.dataset.theme;
   }
-  const isDark = theme === "dark" || (theme !== "light" && window.matchMedia("(prefers-color-scheme: dark)").matches);
-  themeToggleEl.textContent = isDark ? "☀️" : "🌙";
+  themeToggleEl.textContent = theme === "light" ? "🌙" : "☀️";
   if (typeof DashboardChart !== "undefined") DashboardChart.applyTheme();
 }
 
 function initTheme() {
   const stored = localStorage.getItem(THEME_STORAGE_KEY);
-  applyTheme(stored);
+  applyTheme(stored === "light" ? "light" : "dark");
   themeToggleEl.addEventListener("click", () => {
-    const isDark = document.documentElement.dataset.theme === "dark"
-      || (!document.documentElement.dataset.theme && window.matchMedia("(prefers-color-scheme: dark)").matches);
-    const next = isDark ? "light" : "dark";
+    const isLight = document.documentElement.dataset.theme === "light";
+    const next = isLight ? "dark" : "light";
     localStorage.setItem(THEME_STORAGE_KEY, next);
     applyTheme(next);
   });

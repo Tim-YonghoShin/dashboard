@@ -13,6 +13,7 @@ const DashboardChart = (() => {
   let chart = null;
   let series = null;
   let fullData = [];
+  let currentItem = null;
 
   const overlay = document.getElementById("modal-overlay");
   const titleEl = document.getElementById("modal-title");
@@ -26,6 +27,11 @@ const DashboardChart = (() => {
     return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
   }
 
+  function seriesColor() {
+    if (!currentItem) return cssVar("--accent");
+    return cssVar(`--cat-${currentItem.category}`) || cssVar("--accent");
+  }
+
   function hexToRgba(hex, alpha) {
     const m = hex.replace("#", "");
     const r = parseInt(m.substring(0, 2), 16);
@@ -36,7 +42,7 @@ const DashboardChart = (() => {
 
   function ensureChart() {
     if (chart) return;
-    const accent = cssVar("--accent");
+    const accent = seriesColor();
     chart = LightweightCharts.createChart(chartContainer, {
       layout: {
         background: { color: "transparent" },
@@ -77,7 +83,7 @@ const DashboardChart = (() => {
 
   function applyTheme() {
     if (!chart) return;
-    const accent = cssVar("--accent");
+    const accent = seriesColor();
     chart.applyOptions({
       layout: { textColor: cssVar("--text-secondary") },
       grid: {
@@ -129,7 +135,10 @@ const DashboardChart = (() => {
   }
 
   async function open(item) {
+    currentItem = item;
     ensureChart();
+    overlay.style.setProperty("--cat-color", `var(--cat-${item.category})`);
+    applyTheme();
     titleEl.textContent = item.name;
     subtitleEl.textContent = item.symbol;
     overlay.hidden = false;
