@@ -9,6 +9,25 @@ function categoryColorVar(category) {
 const tickerNavEl = document.getElementById("ticker-nav");
 const updatedAtEl = document.getElementById("updated-at");
 const themeToggleEl = document.getElementById("theme-toggle");
+const sidebarTooltipEl = document.getElementById("sidebar-tooltip");
+
+function showSidebarTooltip(row, text) {
+  if (!text) return;
+  sidebarTooltipEl.textContent = text;
+  sidebarTooltipEl.hidden = false;
+  const rowRect = row.getBoundingClientRect();
+  const ttRect = sidebarTooltipEl.getBoundingClientRect();
+  let left = rowRect.right + 10;
+  if (left + ttRect.width > window.innerWidth) left = rowRect.left - ttRect.width - 10;
+  let top = rowRect.top + rowRect.height / 2 - ttRect.height / 2;
+  top = Math.max(8, Math.min(top, window.innerHeight - ttRect.height - 8));
+  sidebarTooltipEl.style.left = `${Math.max(left, 4)}px`;
+  sidebarTooltipEl.style.top = `${top}px`;
+}
+
+function hideSidebarTooltip() {
+  sidebarTooltipEl.hidden = true;
+}
 
 const numberFmt = new Intl.NumberFormat("ko-KR", {
   minimumFractionDigits: 2,
@@ -32,10 +51,16 @@ function deltaDirection(pct) {
 }
 
 function deltaText(item) {
-  const direction = deltaDirection(item.change_pct);
-  const pctText = item.change_pct === null || item.change_pct === undefined
+  // z-score류(0 근처를 오가는 값)는 %변화가 무의미(분모가 0에 가까워 값이 튐)하므로
+  // 절대 변화값으로 표시한다. 방향(등락) 판정도 %가 아니라 원값 변화로 해야 부호 오류가 없다.
+  const isZscore = item.unit === "zscore";
+  const raw = isZscore ? item.change : item.change_pct;
+  const direction = deltaDirection(raw);
+  const pctText = raw === null || raw === undefined
     ? "N/A"
-    : `${item.change_pct > 0 ? "+" : ""}${item.change_pct.toFixed(2)}%`;
+    : isZscore
+      ? `${raw > 0 ? "+" : ""}${raw.toFixed(2)}`
+      : `${raw > 0 ? "+" : ""}${raw.toFixed(2)}%`;
   return { direction, pctText };
 }
 
@@ -102,6 +127,10 @@ function renderTickerRow(item) {
       toggleSelection(item);
     }
   });
+  row.addEventListener("mouseenter", () => showSidebarTooltip(row, item.description));
+  row.addEventListener("mouseleave", hideSidebarTooltip);
+  row.addEventListener("focus", () => showSidebarTooltip(row, item.description));
+  row.addEventListener("blur", hideSidebarTooltip);
   return row;
 }
 

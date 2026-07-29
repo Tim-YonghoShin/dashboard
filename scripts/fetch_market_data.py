@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """config/tickers.json의 티커들을 yfinance로 조회해 data/latest.json을 갱신한다."""
+import csv
 import json
 import sys
 import time
@@ -52,11 +53,27 @@ def fetch_one(symbol):
     return None
 
 
+def fetch_composite(ticker_id):
+    """합성지수는 yfinance가 아니라 update_history.py가 계산해둔 히스토리 CSV 마지막 2개 값을 사용한다."""
+    path = ROOT / "data" / "history" / f"{ticker_id}.csv"
+    if not path.exists():
+        print(f"[WARN] {ticker_id} 히스토리 없음(update_history.py 먼저 실행 필요)", file=sys.stderr)
+        return None
+    with open(path, newline="", encoding="utf-8") as f:
+        rows = list(csv.DictReader(f))
+    if len(rows) < 2:
+        return None
+    return float(rows[-1]["close"]), float(rows[-2]["close"])
+
+
 def main():
     tickers = load_tickers()
     items = []
     for t in tickers:
-        result = fetch_one(t["symbol"])
+        if t.get("source") == "composite":
+            result = fetch_composite(t["id"])
+        else:
+            result = fetch_one(t["symbol"])
         if result is None:
             continue
         price, prev = result
@@ -67,8 +84,10 @@ def main():
                 "id": t["id"],
                 "category": t["category"],
                 "name": t["name"],
-                "symbol": t["symbol"],
+                "symbol": t.get("symbol", "COMPOSITE"),
                 "hero": t.get("hero", False),
+                "description": t.get("description", ""),
+                "unit": t.get("unit"),
                 "price": round(price, 4),
                 "prev_close": round(prev, 4),
                 "change": round(change, 4),

@@ -18,6 +18,7 @@
   --cat-채권금리:   #6f86e6;
   --cat-환율:       #b98bd6;
   --cat-원자재:     #cf8a5e;
+  --cat-합성지수:   #4caf3e;
   --cat-개별종목:   #d06a9c;
   --accent:         var(--cat-채권금리);
 
@@ -44,6 +45,7 @@
   --cat-채권금리:   #4a63d1;
   --cat-환율:       #9a5cbd;
   --cat-원자재:     #a8683a;
+  --cat-합성지수:   #2f8f22;
   --cat-개별종목:   #b1477a;
   --accent:         var(--cat-채권금리);
 }
@@ -388,6 +390,23 @@ body {
 }
 
 .chart-tooltip[hidden] { display: none; }
+
+.sidebar-tooltip {
+  position: fixed;
+  z-index: 50;
+  max-width: 260px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--text-secondary);
+  box-shadow: var(--shadow-lg, 0 8px 20px rgba(0, 0, 0, 0.3));
+  pointer-events: none;
+}
+
+.sidebar-tooltip[hidden] { display: none; }
 
 .chart-tooltip-date {
   font-size: 11px;

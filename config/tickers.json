@@ -1,25 +1,30 @@
 [
-  { "id": "kospi", "category": "국내지수", "name": "코스피", "symbol": "^KS11", "hero": true },
-  { "id": "kosdaq", "category": "국내지수", "name": "코스닥", "symbol": "^KQ11" },
+  { "id": "kospi", "category": "국내지수", "name": "코스피", "symbol": "^KS11", "hero": true, "description": "한국거래소 유가증권시장 상장 전종목을 시가총액 가중으로 산출하는 한국 대표 주가지수." },
+  { "id": "kosdaq", "category": "국내지수", "name": "코스닥", "symbol": "^KQ11", "description": "코스닥시장 상장 중소·벤처·기술주 중심 지수. 코스피보다 변동성이 크고 성장주 비중이 높음." },
 
-  { "id": "sp500", "category": "해외지수", "name": "S&P 500", "symbol": "^GSPC", "hero": true },
-  { "id": "nasdaq", "category": "해외지수", "name": "나스닥", "symbol": "^IXIC", "hero": true },
-  { "id": "dow", "category": "해외지수", "name": "다우존스", "symbol": "^DJI" },
+  { "id": "sp500", "category": "해외지수", "name": "S&P 500", "symbol": "^GSPC", "hero": true, "description": "미국 대형주 500개 종목의 시가총액 가중지수. 미국 증시와 글로벌 리스크자산의 벤치마크로 가장 널리 쓰임." },
+  { "id": "nasdaq", "category": "해외지수", "name": "나스닥", "symbol": "^IXIC", "hero": true, "description": "나스닥거래소 상장 전종목 지수. 대형 기술주 비중이 커서 기술주 심리를 잘 반영." },
+  { "id": "dow", "category": "해외지수", "name": "다우존스", "symbol": "^DJI", "description": "미국 우량주 30종목의 주가평균식 지수. 역사가 가장 길지만 종목 수가 적어 대표성은 S&P500보다 낮음." },
 
-  { "id": "us10y", "category": "채권금리", "name": "미국채 10년", "symbol": "^TNX", "hero": true },
-  { "id": "us30y", "category": "채권금리", "name": "미국채 30년", "symbol": "^TYX" },
-  { "id": "us20y", "category": "채권금리", "name": "미국채 20년+ (TLT)", "symbol": "TLT" },
+  { "id": "us10y", "category": "채권금리", "name": "미국채 10년", "symbol": "^TNX", "hero": true, "description": "미국 10년 만기 국채 수익률. 글로벌 금리·주식 밸류에이션·모기지 금리의 기준이 되는 핵심 지표." },
+  { "id": "us30y", "category": "채권금리", "name": "미국채 30년", "symbol": "^TYX", "description": "미국 30년 만기 국채 수익률. 장기 인플레이션 기대와 재정건전성 우려를 반영." },
+  { "id": "us20y", "category": "채권금리", "name": "미국채 20년+ (TLT)", "symbol": "TLT", "description": "만기 20년 이상 미국 장기국채에 투자하는 iShares ETF. 금리와 반대로 움직여 장기금리 프록시로 활용." },
 
-  { "id": "usdkrw", "category": "환율", "name": "원/달러", "symbol": "KRW=X", "hero": true },
-  { "id": "usdjpy", "category": "환율", "name": "달러/엔", "symbol": "JPY=X" },
-  { "id": "dxy", "category": "환율", "name": "달러인덱스", "symbol": "DX-Y.NYB" },
+  { "id": "usdkrw", "category": "환율", "name": "원/달러", "symbol": "KRW=X", "hero": true, "description": "미국 달러 대비 원화 환율. 원화 가치가 오르면(환율 하락) 원/달러 값이 낮아짐." },
+  { "id": "usdjpy", "category": "환율", "name": "달러/엔", "symbol": "JPY=X", "description": "미국 달러 대비 일본 엔화 환율. 엔캐리트레이드·일본은행 통화정책과 밀접하게 연동." },
+  { "id": "dxy", "category": "환율", "name": "달러인덱스", "symbol": "DX-Y.NYB", "description": "유로·엔·파운드 등 주요 6개 통화 대비 달러 가치를 가중평균한 지수. 달러 전반의 강약을 나타냄." },
 
-  { "id": "wti", "category": "원자재", "name": "WTI 유가", "symbol": "CL=F", "hero": true },
-  { "id": "gold", "category": "원자재", "name": "금", "symbol": "GC=F" },
+  { "id": "wti", "category": "원자재", "name": "WTI 유가", "symbol": "CL=F", "hero": true, "description": "서부텍사스산 원유 선물가격. 미국 원유 벤치마크이며 글로벌 인플레이션·에너지 비용에 직결." },
+  { "id": "gold", "category": "원자재", "name": "금", "symbol": "GC=F", "description": "금 선물가격. 대표적인 안전자산으로 인플레이션 헤지·달러 약세 시 강세를 보이는 경향." },
 
-  { "id": "samsung", "category": "개별종목", "name": "삼성전자", "symbol": "005930.KS" },
-  { "id": "skhynix", "category": "개별종목", "name": "SK하이닉스", "symbol": "000660.KS" },
-  { "id": "apple", "category": "개별종목", "name": "Apple", "symbol": "AAPL" },
-  { "id": "nvidia", "category": "개별종목", "name": "NVIDIA", "symbol": "NVDA" },
-  { "id": "tesla", "category": "개별종목", "name": "Tesla", "symbol": "TSLA" }
+  { "id": "vix", "category": "합성지수", "name": "VIX (변동성지수)", "symbol": "^VIX", "description": "S&P500 옵션 가격에서 역산한 향후 30일 예상 변동성. '공포지수'로 불리며 시장 불안심리가 커지면 급등." },
+  { "id": "move", "category": "합성지수", "name": "MOVE (채권변동성지수)", "symbol": "^MOVE", "description": "미국 국채 옵션 기반 변동성 지수. 채권시장판 VIX로, 금리시장 불안 정도를 나타냄." },
+  { "id": "spgsci", "category": "합성지수", "name": "S&P GSCI (원자재종합)", "symbol": "^SPGSCI", "description": "에너지·금속·농산물 등을 포괄하는 대표적 원자재 종합지수. 에너지(특히 원유) 비중이 매우 큼." },
+  { "id": "macro_composite", "category": "합성지수", "name": "매크로 컴포지트", "source": "composite", "unit": "zscore", "components": ["wti", "us10y", "dxy"], "description": "유가·미국채10년금리·달러인덱스를 각각 표준화(z-score)해 평균한 자체 합성지수. 공식 지수가 아니라 이 대시보드에서 직접 계산한 값이며, 값이 높을수록 '유가·금리·달러가 동시에 평균보다 높은(매크로 긴축적인)' 국면임을 뜻함." },
+
+  { "id": "samsung", "category": "개별종목", "name": "삼성전자", "symbol": "005930.KS", "description": "한국 시가총액 1위 반도체·전자 기업. 코스피 지수에 대한 영향력이 압도적으로 큼." },
+  { "id": "skhynix", "category": "개별종목", "name": "SK하이닉스", "symbol": "000660.KS", "description": "메모리 반도체(D램·낸드) 전문 기업. 반도체 업황·AI 수요에 민감." },
+  { "id": "apple", "category": "개별종목", "name": "Apple", "symbol": "AAPL", "description": "아이폰 등 하드웨어와 서비스를 판매하는 미국 대형 기술주. 시가총액 최상위권." },
+  { "id": "nvidia", "category": "개별종목", "name": "NVIDIA", "symbol": "NVDA", "description": "AI·데이터센터용 GPU 시장을 주도하는 반도체 기업. AI 테마 심리를 대표." },
+  { "id": "tesla", "category": "개별종목", "name": "Tesla", "symbol": "TSLA", "description": "전기차·자율주행·에너지저장 기업. 밸류에이션 변동성이 크고 CEO 이슈에 민감." }
 ]

@@ -6,6 +6,7 @@
 매일 돌려도 가볍고, 실행을 며칠 걸러도 다음 실행에서 빈틈이 메워진다.
 """
 import csv
+import statistics
 import sys
 import time
 from datetime import datetime, timedelta
@@ -65,11 +66,41 @@ def write_csv(csv_path, rows):
             writer.writerow([date, f"{rows[date]:.4f}"])
 
 
+def compute_composite(entry):
+    """구성요소별 전체구간 z-score를 평균해 합성지수를 계산한다.
+    (공식 지수가 아니라 이 대시보드에서 직접 정의한 단순 정규화 평균 방식)
+    """
+    component_series = {}
+    for cid in entry["components"]:
+        path = HISTORY_DIR / f"{cid}.csv"
+        rows = read_existing(path)
+        if not rows:
+            print(f"[WARN] {entry['id']} 합성 실패: 구성요소 {cid} 히스토리 없음", file=sys.stderr)
+            return None
+        component_series[cid] = rows
+
+    common_dates = set.intersection(*(set(rows) for rows in component_series.values()))
+    if not common_dates:
+        print(f"[WARN] {entry['id']} 합성 실패: 구성요소간 공통 날짜 없음", file=sys.stderr)
+        return None
+
+    zscores = {}
+    for cid, rows in component_series.items():
+        values = list(rows.values())
+        mean = statistics.fmean(values)
+        stdev = statistics.pstdev(values) or 1.0
+        zscores[cid] = {d: (rows[d] - mean) / stdev for d in common_dates}
+
+    return {d: statistics.fmean(zscores[cid][d] for cid in entry["components"]) for d in common_dates}
+
+
 def main():
     tickers = load_json(ROOT / "config" / "tickers.json")
+    yf_tickers = [t for t in tickers if t.get("source") != "composite"]
+    composite_tickers = [t for t in tickers if t.get("source") == "composite"]
     ok, failed = 0, []
 
-    for t in tickers:
+    for t in yf_tickers:
         csv_path = HISTORY_DIR / f"{t['id']}.csv"
         existing = read_existing(csv_path)
 
@@ -95,6 +126,16 @@ def main():
         write_csv(csv_path, existing)
         ok += 1
         print(f"[OK] {t['id']} ({t['symbol']}): {len(existing)}개 일별 데이터 -> {csv_path}")
+
+    # 합성지수는 구성요소 CSV가 갱신된 뒤(위 루프 완료 후) 마지막에 계산한다.
+    for t in composite_tickers:
+        composite = compute_composite(t)
+        if composite is None:
+            failed.append(t["id"])
+            continue
+        write_csv(HISTORY_DIR / f"{t['id']}.csv", composite)
+        ok += 1
+        print(f"[OK] {t['id']} (composite): {len(composite)}개 일별 데이터")
 
     if failed:
         print(f"[WARN] 히스토리 조회 실패한 티커: {', '.join(failed)}", file=sys.stderr)
