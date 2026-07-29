@@ -715,6 +715,9 @@ body {
 
 .chat-input:focus { outline: 1px solid var(--accent); }
 
+/* type="password"는 일부 환경에서 한글 IME 조합 입력이 깨져서 대신 이 클래스로 시각적으로만 가린다 */
+.chat-input.masked { -webkit-text-security: disc; }
+
 .chat-send {
   width: 36px;
   flex: none;

@@ -5,13 +5,21 @@ const GEMINI_MODEL = "gemini-flash-latest";
 const GEMINI_KEY_HELP_URL = "https://aistudio.google.com/app/apikey";
 
 const CHAT_SYSTEM_PROMPT = `당신은 사용자가 지금 보고 있는 금융 시황 대시보드 차트를 근거로 답하는 어시스턴트입니다.
-요청에 함께 전달되는 JSON은 사용자가 현재 화면에서 보고 있는 데이터
-(선택한 지표, 화면에 표시된 기간, 표시 중인 이동평균선, 사용자가 직접 찍어둔 비교 포인트와
-그 포인트들 간의 기간·등락률)입니다.
+요청에 함께 전달되는 JSON(selectedSeries)은 사용자가 현재 화면에서 선택한 지표들이며,
+각 지표는 다음을 포함합니다:
+- visibleStart/visibleEnd: 현재 화면에 보이는 구간의 시작/끝 값
+- changePctInVisibleRange: 구간 등락률(%). unit이 "zscore"인 지표는 null이며, 대신
+  changeAbsInVisibleRange(절대 변화값)를 봐야 합니다 — z-score는 0 근처를 오가는 정규화된
+  값이라 %변화가 무의미합니다.
+- samples: 화면에 보이는 구간을 등간격으로 샘플링한 (날짜, 값) 시계열. 여러 지표의 samples를
+  날짜 기준으로 비교하면 어느 쪽이 먼저 움직였는지(선행/후행), 같은 방향으로 움직였는지
+  등을 대략적으로 판단할 수 있습니다. 다만 이는 근사치이며 엄밀한 통계적 교차상관분석이
+  아니라는 점을 답변에 밝히세요.
+pinnedPoints는 사용자가 직접 찍어둔 비교 포인트(날짜별 값)입니다.
 
 - 반드시 이 데이터를 근거로 답변하세요.
-- 데이터에 없는 사실(예: 최신 뉴스, 실시간 시세, 이 JSON에 없는 종목)은 추측하지 말고
-  "현재 화면 데이터에는 없는 정보"라고 명확히 밝히세요.
+- 데이터에 없는 사실(예: 최신 뉴스, 실시간 시세, 이 JSON에 없는 종목, 화면에 없는 기간)은
+  추측하지 말고 "현재 화면 데이터에는 없는 정보"라고 명확히 밝히세요.
 - 투자 자문이 아니라 데이터 해설로서 답하고, 확정적 투자 조언(매수/매도 권유)은 피하세요.
 - 한국어로, 간결하게 답하세요.`;
 
@@ -27,7 +35,8 @@ function clearStoredKey() {
 
 async function callGemini(apiKey, message, context) {
   const safeMessage = String(message).slice(0, 2000);
-  const safeContext = JSON.stringify(context || {}).slice(0, 8000);
+  // 여러 지표의 구간 시계열(samples)까지 포함하므로 넉넉하게 잡는다(Gemini flash 컨텍스트 기준 여유 있음).
+  const safeContext = JSON.stringify(context || {}).slice(0, 60000);
 
   const res = await fetch(
     `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${apiKey}`,
@@ -79,12 +88,14 @@ async function callGemini(apiKey, message, context) {
   }
 
   function refreshInputMode() {
+    // type="password"는 리눅스 Chrome 등에서 한글 IME 조합 입력이 깨지는
+    // 문제가 있어 쓰지 않는다. 대신 text 타입을 유지하고 CSS로만 가린다.
     if (isKeyMode()) {
       input.placeholder = "Gemini API 키를 붙여넣으세요";
-      input.type = "password";
+      input.classList.add("masked");
     } else {
       input.placeholder = '예: 두 지수 언제부터 벌어졌어? ("키변경"으로 키 재설정)';
-      input.type = "text";
+      input.classList.remove("masked");
     }
   }
 

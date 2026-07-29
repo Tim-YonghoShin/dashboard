@@ -597,6 +597,21 @@ const DashboardChart = (() => {
     rebuild();
   }
 
+  const CONTEXT_SAMPLES_PER_SERIES = 80;
+
+  // 구간 내 점들을 등간격으로 최대 n개까지 샘플링(교차상관/선행성 같은 질문에
+  // 답하려면 시작/끝 두 점만으로는 부족해서, 추세를 볼 수 있는 시계열을 함께 넘긴다).
+  function sampleSeries(points, maxSamples) {
+    if (points.length <= maxSamples) return points.map((p) => ({ date: p.x, value: p.y }));
+    const step = (points.length - 1) / (maxSamples - 1);
+    const out = [];
+    for (let i = 0; i < maxSamples; i++) {
+      const idx = Math.round(i * step);
+      out.push({ date: points[idx].x, value: points[idx].y });
+    }
+    return out;
+  }
+
   // 채팅 도우미에게 "지금 화면에 보이는 것"을 요약해서 넘기기 위한 스냅샷.
   function getContext() {
     const visibleRange =
@@ -614,15 +629,20 @@ const DashboardChart = (() => {
         : points;
       const first = inRange[0];
       const last = inRange[inRange.length - 1];
+      const isZscore = item.unit === "zscore";
       const changePct =
-        first && last && first.y ? ((last.y - first.y) / Math.abs(first.y)) * 100 : null;
+        !isZscore && first && last && first.y ? ((last.y - first.y) / Math.abs(first.y)) * 100 : null;
+      const changeAbs = isZscore && first && last ? last.y - first.y : null;
       return {
         name: item.name,
         category: item.category,
-        unit: item.unit || null,
+        unit: item.unit || null, // "zscore"면 %가 아니라 절대 변화값으로 해석해야 함
         visibleStart: first ? { date: first.x, value: first.y } : null,
         visibleEnd: last ? { date: last.x, value: last.y } : null,
         changePctInVisibleRange: changePct !== null ? Number(changePct.toFixed(2)) : null,
+        changeAbsInVisibleRange: changeAbs !== null ? Number(changeAbs.toFixed(4)) : null,
+        // 화면에 보이는 구간을 등간격 샘플링한 시계열(선행성/추세 비교용)
+        samples: sampleSeries(inRange, CONTEXT_SAMPLES_PER_SERIES),
       };
     });
 
