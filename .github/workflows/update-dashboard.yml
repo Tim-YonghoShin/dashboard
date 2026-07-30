@@ -2,7 +2,7 @@ name: Update dashboard data
 
 on:
   schedule:
-    - cron: "*/30 * * * 1-5" # 평일 30분마다 (UTC)
+    - cron: "0 */6 * * *" # 매일 6시간마다 (UTC) — KST 09:00 / 15:00 / 21:00 / 03:00
   workflow_dispatch: {}
 
 permissions:
@@ -28,10 +28,15 @@ jobs:
       - name: Fetch latest market data
         run: python scripts/fetch_market_data.py
 
+      - name: Summarize recent news
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python scripts/summarize_news.py
+
       - name: Commit and push if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/latest.json
-          git diff --cached --quiet || git commit -m "chore: update market data snapshot"
+          git add data/latest.json data/news.json
+          git diff --cached --quiet || git commit -m "chore: update market data snapshot + news summary"
           git push

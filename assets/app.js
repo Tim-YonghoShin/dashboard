@@ -10,6 +10,8 @@ const tickerNavEl = document.getElementById("ticker-nav");
 const updatedAtEl = document.getElementById("updated-at");
 const themeToggleEl = document.getElementById("theme-toggle");
 const sidebarTooltipEl = document.getElementById("sidebar-tooltip");
+const newsListEl = document.getElementById("news-list");
+const newsUpdatedEl = document.getElementById("news-updated");
 
 function showSidebarTooltip(row, text) {
   if (!text) return;
@@ -169,6 +171,76 @@ function renderError(message) {
   tickerNavEl.innerHTML = `<div class="error-banner">${message}</div>`;
 }
 
+/* ---- 뉴스 ---- */
+
+function safeUrl(url) {
+  try {
+    const u = new URL(url, window.location.href);
+    return u.protocol === "http:" || u.protocol === "https:" ? u.href : "#";
+  } catch {
+    return "#";
+  }
+}
+
+function formatNewsTime(iso) {
+  if (!iso) return "";
+  return new Date(iso).toLocaleString("ko-KR", {
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+  });
+}
+
+function renderNewsCard(item) {
+  const card = document.createElement("div");
+  card.className = "news-card";
+
+  const titleLink = document.createElement("a");
+  titleLink.className = "news-card-title";
+  titleLink.href = safeUrl(item.url);
+  titleLink.target = "_blank";
+  titleLink.rel = "noopener";
+  titleLink.textContent = item.title; // textContent만 사용 — RSS/LLM 출력은 신뢰할 수 없는 입력
+
+  const summary = document.createElement("p");
+  summary.className = "news-card-summary";
+  summary.textContent = item.summary;
+
+  const meta = document.createElement("div");
+  meta.className = "news-card-meta";
+  const source = document.createElement("span");
+  source.className = "news-card-source";
+  source.textContent = item.source;
+  const time = document.createElement("span");
+  time.textContent = formatNewsTime(item.published);
+  meta.append(source, time);
+
+  card.append(titleLink, summary, meta);
+  return card;
+}
+
+function renderNews(data) {
+  newsUpdatedEl.textContent = data.generated_at ? formatUpdatedAt(data.generated_at) : "";
+  newsListEl.innerHTML = "";
+  if (!data.items || !data.items.length) {
+    newsListEl.innerHTML = '<div class="error-banner">최근 수집된 뉴스가 없습니다.</div>';
+    return;
+  }
+  for (const item of data.items) newsListEl.appendChild(renderNewsCard(item));
+}
+
+async function loadNews() {
+  try {
+    const res = await fetch(`data/news.json?t=${Date.now()}`, { cache: "no-store" });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    renderNews(await res.json());
+  } catch (err) {
+    console.error("뉴스 로드 실패:", err);
+    newsListEl.innerHTML = '<div class="error-banner">뉴스를 불러오지 못했습니다.</div>';
+  }
+}
+
 async function loadData() {
   try {
     const res = await fetch(`${DATA_URL}?t=${Date.now()}`, { cache: "no-store" });
@@ -218,4 +290,6 @@ function initTheme() {
 
 initTheme();
 loadData();
+loadNews();
 setInterval(loadData, CLIENT_REFRESH_MS);
+setInterval(loadNews, CLIENT_REFRESH_MS);

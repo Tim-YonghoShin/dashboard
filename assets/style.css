@@ -734,3 +734,64 @@ body {
   .chat-fab { right: 16px; bottom: 16px; }
 }
 
+/* 뉴스 */
+
+.news-panel {
+  margin-top: 36px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+
+.news-panel-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.news-updated { font-size: 11px; color: var(--text-muted); }
+
+.news-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 12px;
+}
+
+.news-card {
+  background: var(--surface-1);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.news-card-title {
+  font-size: 13px;
+  font-weight: 650;
+  line-height: 1.4;
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+.news-card-title:hover { color: var(--accent); }
+
+.news-card-summary {
+  font-size: 12px;
+  line-height: 1.55;
+  color: var(--text-secondary);
+}
+
+.news-card-meta {
+  margin-top: auto;
+  padding-top: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.news-card-source { font-weight: 600; }
+
