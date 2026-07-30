@@ -9,7 +9,7 @@ const RANGE_PRESETS = [
 ];
 const DEFAULT_RANGE_LABEL = "1년";
 const MA_PERIODS = [5, 20, 60, 120];
-const DEFAULT_MA_PERIODS = [20];
+const DEFAULT_MA_PERIODS = [20, 60];
 const MAX_PINNED = 8;
 
 // dataviz 카테고리 팔레트에서 all-pairs 검증된 슬롯 위주로 4개 선택(blue/aqua/violet/red)
