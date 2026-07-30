@@ -83,7 +83,6 @@ function parseHistoryCsv(text) {
 
 let itemsById = new Map();
 let selectedIds = [];
-let initialized = false;
 
 function toggleSelection(item) {
   const idx = selectedIds.indexOf(item.id);
@@ -251,12 +250,7 @@ async function loadData() {
     itemsById = new Map(data.items.map((item) => [item.id, item]));
     renderTickerNav(data.items);
 
-    if (!initialized) {
-      initialized = true;
-      const first = data.items.find((i) => i.hero) || data.items[0];
-      if (first) selectedIds = [first.id];
-    }
-    syncSelection();
+    syncSelection(); // 초기 선택 없음 — 빈 차트 상태로 시작
   } catch (err) {
     console.error("데이터 로드 실패:", err);
     updatedAtEl.textContent = "갱신 실패";
@@ -288,7 +282,77 @@ function initTheme() {
   });
 }
 
+/* ---- 블록(그래프/뉴스) 드래그 재정렬 — 좌우 이동 없이 오른쪽 컬럼 내에서만 상하 이동 ---- */
+
+const BLOCKS_ORDER_KEY = "dashboard-blocks-order";
+
+function initSortableBlocks() {
+  const container = document.getElementById("blocks-container");
+  if (!container) return;
+
+  function getBlocks() {
+    return Array.from(container.querySelectorAll(".dashboard-block"));
+  }
+
+  function saveOrder() {
+    localStorage.setItem(BLOCKS_ORDER_KEY, JSON.stringify(getBlocks().map((b) => b.dataset.block)));
+  }
+
+  function applySavedOrder() {
+    let saved;
+    try {
+      saved = JSON.parse(localStorage.getItem(BLOCKS_ORDER_KEY) || "null");
+    } catch {
+      saved = null;
+    }
+    if (!Array.isArray(saved)) return;
+    for (const id of saved) {
+      const el = container.querySelector(`.dashboard-block[data-block="${id}"]`);
+      if (el) container.appendChild(el);
+    }
+  }
+
+  let dragEl = null;
+
+  function onMouseMove(e) {
+    if (!dragEl) return;
+    const siblings = getBlocks().filter((b) => b !== dragEl);
+    let target = null;
+    for (const b of siblings) {
+      const rect = b.getBoundingClientRect();
+      if (e.clientY < rect.top + rect.height / 2) {
+        target = b;
+        break;
+      }
+    }
+    if (target) container.insertBefore(dragEl, target);
+    else container.appendChild(dragEl);
+  }
+
+  function onMouseUp() {
+    if (!dragEl) return;
+    dragEl.classList.remove("dragging");
+    dragEl = null;
+    document.removeEventListener("mousemove", onMouseMove);
+    document.removeEventListener("mouseup", onMouseUp);
+    saveOrder();
+  }
+
+  container.querySelectorAll(".block-handle").forEach((handle) => {
+    handle.addEventListener("mousedown", (e) => {
+      e.preventDefault();
+      dragEl = handle.closest(".dashboard-block");
+      dragEl.classList.add("dragging");
+      document.addEventListener("mousemove", onMouseMove);
+      document.addEventListener("mouseup", onMouseUp);
+    });
+  });
+
+  applySavedOrder();
+}
+
 initTheme();
+initSortableBlocks();
 loadData();
 loadNews();
 setInterval(loadData, CLIENT_REFRESH_MS);

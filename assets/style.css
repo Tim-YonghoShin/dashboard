@@ -257,7 +257,50 @@ body {
 
 /* Chart panel */
 
-.chart-panel { flex: 1; min-width: 0; }
+.blocks-container {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.dashboard-block {
+  background: var(--surface-1);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 8px 18px 18px;
+}
+
+.dashboard-block.dragging {
+  opacity: 0.45;
+  border-color: var(--accent);
+}
+
+.block-handle {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 2px 12px;
+  cursor: grab;
+  user-select: none;
+}
+
+.block-handle:active { cursor: grabbing; }
+
+.block-drag-icon {
+  color: var(--text-muted);
+  font-size: 13px;
+  letter-spacing: -1px;
+}
+
+.block-title {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
 
 .chart-panel-header {
   display: flex;
@@ -737,9 +780,7 @@ body {
 /* 뉴스 */
 
 .news-panel {
-  margin-top: 36px;
-  padding-top: 20px;
-  border-top: 1px solid var(--border);
+  margin-top: 0;
 }
 
 .news-panel-header {
