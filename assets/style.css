@@ -9,8 +9,8 @@
   --text-muted:     #5d6980;
   --gridline:       #20293b;
   --border:         #20293b;
-  --up:             #e0765d;
-  --down:           #4bb58a;
+  --up:             #4bb58a;
+  --down:           #e0765d;
   --flat:           #5d6980;
 
   --cat-국내지수:   #e0a63c;
@@ -36,8 +36,8 @@
   --text-muted:     #8a8f9c;
   --gridline:       #e4e3df;
   --border:         #e4e3df;
-  --up:             #c5502f;
-  --down:           #1c8f6b;
+  --up:             #1c8f6b;
+  --down:           #c5502f;
   --flat:           #8a8f9c;
 
   --cat-국내지수:   #b3791c;
@@ -785,10 +785,46 @@ body {
 
 .news-panel-header {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
   margin-bottom: 14px;
 }
+
+.news-tabs { display: flex; gap: 6px; }
+
+.news-tab {
+  padding: 5px 13px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface-1);
+  color: var(--text-secondary);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.news-tab:hover { background: var(--surface-2); }
+
+.news-tab.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #0d1119;
+}
+
+.news-more {
+  display: block;
+  margin: 12px auto 0;
+  padding: 6px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface-1);
+  color: var(--text-secondary);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.news-more:hover { background: var(--surface-2); }
+.news-more[hidden] { display: none; }
 
 .news-updated { font-size: 11px; color: var(--text-muted); }
 

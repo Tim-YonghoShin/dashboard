@@ -219,14 +219,52 @@ function renderNewsCard(item) {
   return card;
 }
 
-function renderNews(data) {
-  newsUpdatedEl.textContent = data.generated_at ? formatUpdatedAt(data.generated_at) : "";
+const NEWS_INITIAL_COUNT = 4;
+const newsMoreEl = document.getElementById("news-more");
+
+let newsData = { domestic: [], international: [] };
+let activeNewsRegion = "international";
+const newsExpanded = { domestic: false, international: false };
+
+function renderNewsList() {
+  const items = newsData[activeNewsRegion] || [];
   newsListEl.innerHTML = "";
-  if (!data.items || !data.items.length) {
+  if (!items.length) {
     newsListEl.innerHTML = '<div class="error-banner">최근 수집된 뉴스가 없습니다.</div>';
+    newsMoreEl.hidden = true;
     return;
   }
-  for (const item of data.items) newsListEl.appendChild(renderNewsCard(item));
+  const expanded = newsExpanded[activeNewsRegion];
+  const visible = expanded ? items : items.slice(0, NEWS_INITIAL_COUNT);
+  for (const item of visible) newsListEl.appendChild(renderNewsCard(item));
+
+  if (items.length > NEWS_INITIAL_COUNT) {
+    newsMoreEl.hidden = false;
+    newsMoreEl.textContent = expanded ? "접기" : `더보기 (+${items.length - NEWS_INITIAL_COUNT})`;
+  } else {
+    newsMoreEl.hidden = true;
+  }
+}
+
+function renderNews(data) {
+  newsUpdatedEl.textContent = data.generated_at ? formatUpdatedAt(data.generated_at) : "";
+  newsData = { domestic: data.domestic || [], international: data.international || [] };
+  renderNewsList();
+}
+
+function initNewsTabs() {
+  document.querySelectorAll(".news-tab").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      if (btn.classList.contains("active")) return;
+      activeNewsRegion = btn.dataset.region;
+      document.querySelectorAll(".news-tab").forEach((b) => b.classList.toggle("active", b === btn));
+      renderNewsList();
+    });
+  });
+  newsMoreEl.addEventListener("click", () => {
+    newsExpanded[activeNewsRegion] = !newsExpanded[activeNewsRegion];
+    renderNewsList();
+  });
 }
 
 async function loadNews() {
@@ -237,6 +275,7 @@ async function loadNews() {
   } catch (err) {
     console.error("뉴스 로드 실패:", err);
     newsListEl.innerHTML = '<div class="error-banner">뉴스를 불러오지 못했습니다.</div>';
+    newsMoreEl.hidden = true;
   }
 }
 
@@ -353,6 +392,7 @@ function initSortableBlocks() {
 
 initTheme();
 initSortableBlocks();
+initNewsTabs();
 loadData();
 loadNews();
 setInterval(loadData, CLIENT_REFRESH_MS);

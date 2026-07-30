@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """config/news_feeds.json의 RSS에서 최근 뉴스를 모아 Gemini로 중요 헤드라인만
-선별·요약해 data/news.json에 저장한다.
+국내/해외 각각 선별·요약해 data/news.json에 저장한다.
 
 필요한 환경변수:
   GEMINI_API_KEY
@@ -18,8 +18,8 @@ import requests
 ROOT = Path(__file__).resolve().parent.parent
 KST = timezone(timedelta(hours=9))
 LOOKBACK_HOURS = 8  # 6시간 갱신 주기 + 여유
-MAX_PER_FEED = 15
-MAX_SELECTED = 10
+MAX_PER_FEED = 20
+MAX_PER_REGION = 16
 GEMINI_MODEL = "gemini-flash-latest"
 
 
@@ -56,6 +56,7 @@ def collect_candidates():
                 continue
             candidates.append(
                 {
+                    "region": feed["region"],
                     "source": feed["name"],
                     "title": entry.get("title", ""),
                     "summary_raw": (entry.get("summary") or "")[:400],
@@ -70,19 +71,24 @@ def collect_candidates():
 def build_candidate_list(candidates):
     lines = []
     for i, c in enumerate(candidates):
-        lines.append(f"[{i}] ({c['source']}) {c['title']} — {c['summary_raw']}")
+        lines.append(f"[{i}] ({c['region']}/{c['source']}) {c['title']} — {c['summary_raw']}")
     return "\n".join(lines)
 
 
 def call_gemini(api_key, candidates):
-    prompt = f"""아래는 최근 {LOOKBACK_HOURS}시간 이내 국내외 경제/시장 뉴스 후보 목록입니다.
-이 중 시황 대시보드에 보여줄 만큼 중요한 "시장 관련" 헤드라인만 최대 {MAX_SELECTED}개 선별하세요.
+    prompt = f"""아래는 최근 {LOOKBACK_HOURS}시간 이내 국내·해외 경제/시장 뉴스 후보 목록입니다.
+각 줄 맨 앞 [번호]가 index이고, 괄호 안은 (지역/언론사)입니다.
+
+"국내" 후보와 "해외" 후보를 각각 별도로 최대 {MAX_PER_REGION}개씩 선정하세요.
+선정 기준(우선순위 순):
+1. 여러 언론사가 동시에 다루는(교차 보도되는) 사안 — 중요도가 높다는 신호
+2. 시장(주가·금리·환율·원자재 등)과 직접 연관된 사안
+3. 긴급속보성 사안(정책 발표, 급락/급등, 지정학적 이벤트 등)
 - 연예/스포츠/단순 사건사고 등 시장과 무관한 기사는 제외
-- 국내·해외 균형 있게 선택 (한쪽에 치우치지 말 것)
-- 같은 사안을 다루는 중복 기사는 하나만
+- 같은 사안을 다루는 중복 기사는 대표 1건만 선택
 - 각 항목에 대해 원문 내용을 바탕으로 한국어로 1~2문장 간결 요약 작성
 
-후보 목록 (각 줄 맨 앞 [번호]가 index입니다):
+후보 목록:
 {build_candidate_list(candidates)}
 """
     res = requests.post(
@@ -92,7 +98,7 @@ def call_gemini(api_key, candidates):
             "contents": [{"role": "user", "parts": [{"text": prompt}]}],
             "generationConfig": {
                 "temperature": 0.3,
-                "maxOutputTokens": 3072,
+                "maxOutputTokens": 8192,
                 "responseMimeType": "application/json",
                 "responseSchema": {
                     "type": "ARRAY",
@@ -107,7 +113,7 @@ def call_gemini(api_key, candidates):
                 },
             },
         },
-        timeout=60,
+        timeout=90,
     )
     res.raise_for_status()
     data = res.json()
@@ -122,7 +128,7 @@ def main():
         sys.exit(1)
 
     candidates = collect_candidates()
-    items = []
+    domestic, international = [], []
 
     if not candidates:
         print("[WARN] 수집된 뉴스 후보가 없습니다.")
@@ -142,17 +148,22 @@ def main():
             if c["url"] in seen_urls:
                 continue
             seen_urls.add(c["url"])
-            items.append(
-                {
-                    "title": c["title"],
-                    "summary": sel.get("summary", ""),
-                    "source": c["source"],
-                    "url": c["url"],
-                    "published": c["published"],
-                }
-            )
+            item = {
+                "title": c["title"],
+                "summary": sel.get("summary", ""),
+                "source": c["source"],
+                "url": c["url"],
+                "published": c["published"],
+            }
+            bucket = domestic if c["region"] == "국내" else international
+            if len(bucket) < MAX_PER_REGION:
+                bucket.append(item)
 
-    payload = {"generated_at": datetime.now(KST).isoformat(), "items": items}
+    payload = {
+        "generated_at": datetime.now(KST).isoformat(),
+        "domestic": domestic,
+        "international": international,
+    }
 
     out_path = ROOT / "data" / "news.json"
     out_path.parent.mkdir(parents=True, exist_ok=True)
@@ -160,7 +171,10 @@ def main():
         json.dump(payload, f, ensure_ascii=False, indent=2)
         f.write("\n")
 
-    print(f"[OK] 뉴스 {len(items)}건 저장 -> {out_path} (후보 {len(candidates)}건 중 선별)")
+    print(
+        f"[OK] 국내 {len(domestic)}건 / 해외 {len(international)}건 저장 -> {out_path} "
+        f"(후보 {len(candidates)}건 중 선별)"
+    )
 
 
 if __name__ == "__main__":

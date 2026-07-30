@@ -60,10 +60,14 @@
         </div>
 
         <div class="news-panel-header">
-          <span class="toolbar-label">주요 뉴스</span>
+          <div class="news-tabs" id="news-tabs">
+            <button class="news-tab active" type="button" data-region="international">해외</button>
+            <button class="news-tab" type="button" data-region="domestic">국내</button>
+          </div>
           <span class="news-updated mono" id="news-updated"></span>
         </div>
         <div class="news-list" id="news-list"></div>
+        <button class="news-more" id="news-more" type="button" hidden>더보기</button>
       </section>
     </div>
   </main>
