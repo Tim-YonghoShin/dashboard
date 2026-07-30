@@ -1,119 +1,147 @@
 {
-  "generated_at": "2026-07-30T09:43:19.973226+09:00",
+  "generated_at": "2026-07-30T09:54:25.270037+09:00",
   "domestic": [
     {
-      "title": "이틀 연속 수직낙하 코스피, 상승 출발했지만…보합권에서 혼조세 양상",
-      "summary": "연준의 금리 동결과 연이은 폭락 이후 코스피가 보합권에서 혼조세를 보이고 있습니다.",
+      "title": "목표가 줄줄이 올랐다…LG생활건강, ‘깜짝 실적’에 장중 17%대 급등",
+      "summary": "LG생활건강이 2분기 시장 기대를 뛰어넘는 호실적을 발표하면서 장 초반 주가가 급등하고 증권가 목표주가 상향 조종이 이어졌습니다.",
       "source": "매일경제 증권",
-      "url": "https://www.mk.co.kr/news/stock/12111575",
-      "published": "2026-07-30T00:25:04+00:00"
+      "url": "https://www.mk.co.kr/news/stock/12111670",
+      "published": "2026-07-30T00:48:19+00:00"
+    },
+    {
+      "title": "이란, 미국 선제공격에 정유주 급등…GS, 7%대↑",
+      "summary": "미국과 이란의 무력 충돌 재개 소식이 전해지면서 정유 관련 종목 주가가 장 초반 강세를 보이고 있습니다.",
+      "source": "매일경제 증권",
+      "url": "https://www.mk.co.kr/news/stock/12111669",
+      "published": "2026-07-30T00:47:43+00:00"
+    },
+    {
+      "title": "“7월 코스피 수익률, 세계 꼴찌”…미 -6%, 일 -13%인데 한국은 -31%",
+      "summary": "7월 들어 코스피가 사상 첫 이틀 연속 서킷브레이커 발동과 함께 폭락하며 글로벌 주요 증시 중 최하위 수익률을 기록했습니다.",
+      "source": "매일경제 증권",
+      "url": "https://www.mk.co.kr/news/stock/12111603",
+      "published": "2026-07-30T00:27:56+00:00"
     },
     {
       "title": "반대 3표속 美 기준금리 동결…트럼프와 시장 사이에서 딜레마에 빠진 워시[BOK WATCHER]",
-      "summary": "미 연준의 기준금리 동결 속 연내 금리 인상 가능성이 제기되며 시장과 정책 간 딜레마가 깊어지고 있습니다.",
+      "summary": "미국 연방준비제도가 기준금리를 동결한 가운데, 연내 인상 가능성 및 통화정책 향방을 둘러싼 시장의 딜레마가 깊어지고 있습니다.",
       "source": "매일경제 증권",
       "url": "https://www.mk.co.kr/news/economy/12111567",
       "published": "2026-07-30T00:21:02+00:00"
     },
     {
       "title": "野 “증시 급락 개미 탓? 노답삼형제 경질”…정부는 “레버리지 긴급 규제”",
-      "summary": "증시 급락에 따라 정부가 레버리지 ETF 규제 강화 방침을 발표했으나 정치권의 비판이 이어지고 있습니다.",
+      "summary": "이틀 연속 국내 증시 폭락에 대응해 정부가 단일종목 레버리지 ETF 규제 강화 방침을 발표했습니다.",
       "source": "매일경제 증권",
       "url": "https://www.mk.co.kr/news/stock/12111534",
       "published": "2026-07-30T00:04:22+00:00"
     },
     {
       "title": "“하이닉스 하한가 1주에 코인판 붕괴”...프리마켓 헐값 체결이 부른 800억 재앙",
-      "summary": "대체거래소 프리마켓의 시초가 왜곡으로 SK하이닉스 주가가 하한가 체결되며 대규모 청산 손실이 발생했습니다.",
+      "summary": "대체거래소 프리마켓의 SK하이닉스 시초가 왜곡 여파로 파생상품 시장에서 대규모 강제 청산 파장이 발생했습니다.",
       "source": "매일경제 증권",
       "url": "https://www.mk.co.kr/news/stock/12111527",
       "published": "2026-07-29T23:57:18+00:00"
     },
     {
+      "title": "연준 금리동결했는데 장기물 금리 폭등 왜? 현금 마른 메타 주가가 결국 무너진 이유",
+      "summary": "미 연준의 금리 동결 결정 이후 장기 국채 금리가 폭등하고 메타 등 빅테크 기업들의 주가가 큰 폭으로 하락했습니다.",
+      "source": "매일경제 증권",
+      "url": "https://www.mk.co.kr/news/economy/12111484",
+      "published": "2026-07-29T22:54:42+00:00"
+    },
+    {
       "title": "“주식은 됐고 원금 돌려줘”...증시 꺾이자 8조 물량 전환사채 ‘부메랑’",
-      "summary": "증시 급락으로 전환사채(CB) 투자자들의 조기상환 요구가 잇따르며 기업들의 상환 부담이 가중되고 있습니다.",
+      "summary": "증시 급락으로 주식 전환 매력이 떨어지자 기업들이 발행한 8조 원 규모 전환사채(CB)의 풋옵션 상환 청구 부담이 확대되고 있습니다.",
       "source": "매일경제 증권",
       "url": "https://www.mk.co.kr/news/stock/12111470",
       "published": "2026-07-29T22:20:33+00:00"
     },
     {
       "title": "[특징주] 조선3사 호실적에 기대감↑…장 초반 매수세 유입",
-      "summary": "조선 3사가 고부가가치 선박 비중 확대에 힘입어 2분기 호실적을 기록하며 매수세가 유입되었습니다.",
+      "summary": "국내 조선 3사가 고부가가치 선박 비중 확대에 힘입어 2분기 호실적을 발표하자 주식 시장에서 매수세가 유입되었습니다.",
       "source": "연합뉴스 경제",
       "url": "https://www.yna.co.kr/view/AKR20260730054400008",
       "published": "2026-07-30T00:35:05+00:00"
     },
     {
-      "title": "SK하이닉스, 4~6%대 급락 중…삼성전자는 1.6% 상승",
-      "summary": "반도체주 변동성이 커진 가운데 SK하이닉스는 급락세를 보이고 삼성전자는 상승세를 나타냈습니다.",
+      "title": "중소제조업 취업자 10만8천명 감소…생산도 3.7% 줄어",
+      "summary": "중동 전쟁 장기화 우려의 영향으로 국내 중소제조업의 생산과 고용 위축세가 이어지고 있습니다.",
       "source": "연합뉴스 경제",
-      "url": "https://www.yna.co.kr/view/AKR20260730048500008",
-      "published": "2026-07-30T00:27:58+00:00"
-    },
-    {
-      "title": "한은 \"미 연준 통화정책·중동 불확실성 확대…각별한 경계감\"",
-      "summary": "한국은행은 미 연준의 통화정책 향방과 중동 지정학적 불확실성 확대에 대해 경계감을 높이고 있습니다.",
-      "source": "연합뉴스 경제",
-      "url": "https://www.yna.co.kr/view/AKR20260730041200002",
-      "published": "2026-07-30T00:11:57+00:00"
+      "url": "https://www.yna.co.kr/view/AKR20260730042100030",
+      "published": "2026-07-30T00:34:42+00:00"
     }
   ],
   "international": [
     {
-      "title": "Innolight Set For Biggest Hong Kong Debut in Seven Years",
-      "summary": "중지인노라이트가 68억 달러 규모의 대형 상장에 성공하며 AI 반도체 종목에 대한 투자자들의 관심이 집중되었습니다.",
+      "title": "Latest Oil Market News and Analysis for July 30",
+      "summary": "미국의 이란 목표물 추가 타격으로 중동 지역 지정학적 긴장이 지속되는 가운데 국제 유가가 상승 후 숨고르기 양상을 보이고 있습니다.",
       "source": "Bloomberg Markets",
-      "url": "https://www.bloomberg.com/news/articles/2026-07-29/innolight-set-for-biggest-hong-kong-debut-in-seven-years",
-      "published": "2026-07-29T23:00:00+00:00"
+      "url": "https://www.bloomberg.com/news/articles/2026-07-29/latest-oil-market-news-and-analysis-for-july-30",
+      "published": "2026-07-29T22:01:33+00:00"
+    },
+    {
+      "title": "Stocks in Asia Fluctuate, Bonds Drop After Fed: Markets Wrap",
+      "summary": "미 연준 통화정책 여파와 반도체주 약세로 아시아 증시가 혼조세를 보였으며 미 장기 국채 금리는 급등했습니다.",
+      "source": "Bloomberg Markets",
+      "url": "https://www.bloomberg.com/news/articles/2026-07-29/stock-market-today-dow-s-p-live-updates",
+      "published": "2026-07-29T22:11:13+00:00"
+    },
+    {
+      "title": "Gold Advances After Federal Reserve Keeps Interest Rates on Hold",
+      "summary": "미 연준의 금리 동결과 중동 분쟁에 따른 인플레이션 우려가 맞물리면서 안전자산인 금 가격이 상승했습니다.",
+      "source": "Bloomberg Markets",
+      "url": "https://www.bloomberg.com/news/articles/2026-07-29/gold-advances-after-federal-reserve-keeps-interest-rates-on-hold",
+      "published": "2026-07-29T23:24:57+00:00"
+    },
+    {
+      "title": "Goldman Co-CIO: The Market's Punishing the Hyperscalers",
+      "summary": "빅테크 기업들의 AI 캡엑스 투자 증가 대비 수익성(ROI) 불확실성이 제기되며 시장의 우려가 커지고 있습니다.",
+      "source": "Bloomberg Markets",
+      "url": "https://www.bloomberg.com/news/videos/2026-07-29/goldman-co-cio-the-market-s-punishing-the-hyperscalers-video",
+      "published": "2026-07-29T23:28:16+00:00"
     },
     {
       "title": "US 30-Year Yield Soars to Highest Since ‘07 After Fed Stands Pat",
-      "summary": "미 연준의 금리 동결 발표 이후 미국 30년물 국채 금리가 2007년 이후 최고 수준으로 폭등했습니다.",
+      "summary": "미 연준의 기준금리 동결 직후 30년 만기 미 국채 수익률이 2007년 이후 최고치로 폭등했습니다.",
       "source": "Bloomberg Economics",
       "url": "https://www.bloomberg.com/news/articles/2026-07-29/treasuries-jolted-as-fed-hold-trims-september-hike-bets",
       "published": "2026-07-29T18:15:49+00:00"
     },
     {
       "title": "Fed Holds Rates, Three Officials Dissent Favoring a Hike",
-      "summary": "미 연준이 기준금리를 동결했으나 위원 3명이 인상을 주장하며 매파적 기류와 견해차를 나타냈습니다.",
+      "summary": "미 연준이 금리를 동결했으나 통화정책 표결에서 3명의 위원이 금리 인상을 요구하며 연준 내부 분열이 드러났습니다.",
       "source": "Bloomberg Economics",
       "url": "https://www.bloomberg.com/news/articles/2026-07-29/fed-holds-rates-steady-three-officials-dissent-favoring-a-hike",
       "published": "2026-07-29T18:00:01+00:00"
     },
     {
+      "title": "US borrowing costs hit 19-year high as Fed defies inflation fears",
+      "summary": "중동 전쟁에 따른 인플레이션 우려 속에 미 연준이 금리를 동결하자 미국 국채 금리가 19년 만에 최고 수준으로 치솟았습니다.",
+      "source": "Financial Times",
+      "url": "https://www.ft.com/content/c4eedbe8-6345-48b6-8d44-5cc5b0bea2c7?syn-25a6b1a6=1",
+      "published": "2026-07-29T21:01:56+00:00"
+    },
+    {
       "title": "Meta shares tumble as Zuckerberg tries to sell his vision for AI ‘agents’",
-      "summary": "메타는 AI 분야 투자비 증가 및 실적 전망 불확실성 여파로 주가가 큰 폭으로 하락했습니다.",
+      "summary": "메타가 AI 에이전트 투자에 따른 비용 증가와 부진한 매출 전망을 발표하면서 주가가 큰 폭으로 하락했습니다.",
       "source": "Financial Times",
       "url": "https://www.ft.com/content/06d941ed-8136-46a4-a2ec-44bea1b35c3b?syn-25a6b1a6=1",
       "published": "2026-07-29T23:59:51+00:00"
     },
     {
       "title": "Microsoft signs $130bn in data centre leases as it races to meet AI demand",
-      "summary": "마이크로소프트는 급증하는 AI 수요를 충당하기 위해 1,300억 달러 규모의 데이터센터 임대 계약을 체결했습니다.",
+      "summary": "마이크로소프트가 폭증하는 AI 수요에 대응하기 위해 1,300억 달러 규모의 데이터센터 임대 계약을 체결했습니다.",
       "source": "Financial Times",
       "url": "https://www.ft.com/content/da7c4472-cb30-4b82-b321-d82c1859419e?syn-25a6b1a6=1",
       "published": "2026-07-30T00:05:09+00:00"
     },
     {
-      "title": "Qualcomm posts shrinking sales and profits as chip costs hurt smartphone market",
-      "summary": "퀄컴은 메모리 칩 가격 상승에 따른 스마트폰 시장 부진으로 순이익이 25% 감소했습니다.",
-      "source": "Financial Times",
-      "url": "https://www.ft.com/content/d5762ed8-a384-4c6a-9f5e-8bce573cf0a0?syn-25a6b1a6=1",
-      "published": "2026-07-29T22:20:48+00:00"
-    },
-    {
       "title": "Oil prices surge after Trump says Iran will ‘get a beating’ for missile attack",
-      "summary": "트럼프 전 대통령의 이란 관련 강경 발언 및 미군 시설 공격 여파로 국제 유가가 급등했습니다.",
+      "summary": "미국과 이란 간 미사일 공방 등 무력 충돌 소식에 국제 유가가 급등했습니다.",
       "source": "Financial Times",
       "url": "https://www.ft.com/content/b2fe912f-01ef-4daa-874e-a180dfeb728c?syn-25a6b1a6=1",
       "published": "2026-07-29T20:05:27+00:00"
-    },
-    {
-      "title": "US oil inventories fall to ‘precariously low’ level as Iran war disrupts supply",
-      "summary": "미국의 원유 재고가 급감하며 중동 분쟁 속 글로벌 에너지 공급 부족 우려가 커지고 있습니다.",
-      "source": "Financial Times",
-      "url": "https://www.ft.com/content/86f37415-cc80-4ea6-bc03-87c96cb831f4?syn-25a6b1a6=1",
-      "published": "2026-07-29T17:03:16+00:00"
     }
   ]
 }

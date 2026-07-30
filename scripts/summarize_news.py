@@ -19,7 +19,7 @@ ROOT = Path(__file__).resolve().parent.parent
 KST = timezone(timedelta(hours=9))
 LOOKBACK_HOURS = 8  # 6시간 갱신 주기 + 여유
 MAX_PER_FEED = 20
-MAX_PER_REGION = 16
+MAX_PER_REGION = 20
 GEMINI_MODEL = "gemini-flash-latest"
 
 

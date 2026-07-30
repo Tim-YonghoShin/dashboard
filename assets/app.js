@@ -219,12 +219,12 @@ function renderNewsCard(item) {
   return card;
 }
 
-const NEWS_INITIAL_COUNT = 4;
+const NEWS_PAGE_SIZE = 4;
 const newsMoreEl = document.getElementById("news-more");
 
 let newsData = { domestic: [], international: [] };
 let activeNewsRegion = "international";
-const newsExpanded = { domestic: false, international: false };
+const newsVisibleCount = { domestic: NEWS_PAGE_SIZE, international: NEWS_PAGE_SIZE };
 
 function renderNewsList() {
   const items = newsData[activeNewsRegion] || [];
@@ -234,13 +234,12 @@ function renderNewsList() {
     newsMoreEl.hidden = true;
     return;
   }
-  const expanded = newsExpanded[activeNewsRegion];
-  const visible = expanded ? items : items.slice(0, NEWS_INITIAL_COUNT);
-  for (const item of visible) newsListEl.appendChild(renderNewsCard(item));
+  const count = Math.min(newsVisibleCount[activeNewsRegion], items.length);
+  for (const item of items.slice(0, count)) newsListEl.appendChild(renderNewsCard(item));
 
-  if (items.length > NEWS_INITIAL_COUNT) {
+  if (count < items.length) {
     newsMoreEl.hidden = false;
-    newsMoreEl.textContent = expanded ? "접기" : `더보기 (+${items.length - NEWS_INITIAL_COUNT})`;
+    newsMoreEl.textContent = `더보기 (+${Math.min(NEWS_PAGE_SIZE, items.length - count)})`;
   } else {
     newsMoreEl.hidden = true;
   }
@@ -262,7 +261,7 @@ function initNewsTabs() {
     });
   });
   newsMoreEl.addEventListener("click", () => {
-    newsExpanded[activeNewsRegion] = !newsExpanded[activeNewsRegion];
+    newsVisibleCount[activeNewsRegion] += NEWS_PAGE_SIZE;
     renderNewsList();
   });
 }
