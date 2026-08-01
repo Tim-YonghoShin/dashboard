@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-01T10:25:53.665556+09:00",
+  "updated_at": "2026-08-01T16:57:04.522675+09:00",
   "items": [
     {
       "id": "kospi",
@@ -48,9 +48,9 @@
       "hero": true,
       "description": "나스닥거래소 상장 전종목 지수. 대형 기술주 비중이 커서 기술주 심리를 잘 반영.",
       "unit": null,
-      "price": 25373.8535,
+      "price": 25373.8496,
       "prev_close": 25122.178,
-      "change": 251.6755,
+      "change": 251.6716,
       "change_pct": 1.002
     },
     {
@@ -113,10 +113,10 @@
       "hero": true,
       "description": "미국 달러 대비 원화 환율. 원화 가치가 오르면(환율 하락) 원/달러 값이 낮아짐.",
       "unit": null,
-      "price": 1442.0699,
+      "price": 1436.6,
       "prev_close": 1421.16,
-      "change": 20.9099,
-      "change_pct": 1.471
+      "change": 15.4399,
+      "change_pct": 1.086
     },
     {
       "id": "usdjpy",
@@ -139,10 +139,10 @@
       "hero": false,
       "description": "유로·엔·파운드 등 주요 6개 통화 대비 달러 가치를 가중평균한 지수. 달러 전반의 강약을 나타냄.",
       "unit": null,
-      "price": 99.803,
+      "price": 99.8,
       "prev_close": 100.181,
-      "change": -0.378,
-      "change_pct": -0.377
+      "change": -0.381,
+      "change_pct": -0.38
     },
     {
       "id": "wti",
@@ -152,10 +152,10 @@
       "hero": true,
       "description": "서부텍사스산 원유 선물가격. 미국 원유 벤치마크이며 글로벌 인플레이션·에너지 비용에 직결.",
       "unit": null,
-      "price": 86.8,
+      "price": 84.67,
       "prev_close": 82.36,
-      "change": 4.44,
-      "change_pct": 5.391
+      "change": 2.31,
+      "change_pct": 2.805
     },
     {
       "id": "gold",
@@ -165,10 +165,10 @@
       "hero": false,
       "description": "금 선물가격. 대표적인 안전자산으로 인플레이션 헤지·달러 약세 시 강세를 보이는 경향.",
       "unit": null,
-      "price": 4098.6001,
+      "price": 4049.1001,
       "prev_close": 4133.1001,
-      "change": -34.5,
-      "change_pct": -0.835
+      "change": -84.0,
+      "change_pct": -2.032
     },
     {
       "id": "vix",
@@ -204,10 +204,10 @@
       "hero": false,
       "description": "에너지·금속·농산물 등을 포괄하는 대표적 원자재 종합지수. 에너지(특히 원유) 비중이 매우 큼.",
       "unit": null,
-      "price": 686.1457,
+      "price": 686.15,
       "prev_close": 683.7392,
-      "change": 2.4065,
-      "change_pct": 0.352
+      "change": 2.4108,
+      "change_pct": 0.353
     },
     {
       "id": "macro_composite",
