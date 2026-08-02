@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-02T21:50:27.622152+09:00",
+  "updated_at": "2026-08-03T03:48:23.339963+09:00",
   "items": [
     {
       "id": "kospi",
@@ -126,10 +126,10 @@
       "hero": false,
       "description": "미국 달러 대비 일본 엔화 환율. 엔캐리트레이드·일본은행 통화정책과 밀접하게 연동.",
       "unit": null,
-      "price": 157.4,
+      "price": 157.129,
       "prev_close": 159.704,
-      "change": -2.304,
-      "change_pct": -1.443
+      "change": -2.575,
+      "change_pct": -1.612
     },
     {
       "id": "dxy",
