@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-06T17:10:12.981942+09:00",
+  "updated_at": "2026-08-06T22:27:53.926994+09:00",
   "items": [
     {
       "id": "kospi",
@@ -74,10 +74,10 @@
       "hero": true,
       "description": "미국 10년 만기 국채 수익률. 글로벌 금리·주식 밸류에이션·모기지 금리의 기준이 되는 핵심 지표.",
       "unit": null,
-      "price": 4.617,
-      "prev_close": 4.627,
-      "change": -0.01,
-      "change_pct": -0.216
+      "price": 4.645,
+      "prev_close": 4.617,
+      "change": 0.028,
+      "change_pct": 0.606
     },
     {
       "id": "us30y",
@@ -87,10 +87,10 @@
       "hero": false,
       "description": "미국 30년 만기 국채 수익률. 장기 인플레이션 기대와 재정건전성 우려를 반영.",
       "unit": null,
-      "price": 5.174,
-      "prev_close": 5.19,
-      "change": -0.016,
-      "change_pct": -0.308
+      "price": 5.197,
+      "prev_close": 5.174,
+      "change": 0.023,
+      "change_pct": 0.445
     },
     {
       "id": "us20y",
@@ -113,10 +113,10 @@
       "hero": true,
       "description": "미국 달러 대비 원화 환율. 원화 가치가 오르면(환율 하락) 원/달러 값이 낮아짐.",
       "unit": null,
-      "price": 1427.04,
+      "price": 1423.48,
       "prev_close": 1422.1,
-      "change": 4.9401,
-      "change_pct": 0.347
+      "change": 1.38,
+      "change_pct": 0.097
     },
     {
       "id": "usdjpy",
@@ -126,10 +126,10 @@
       "hero": false,
       "description": "미국 달러 대비 일본 엔화 환율. 엔캐리트레이드·일본은행 통화정책과 밀접하게 연동.",
       "unit": null,
-      "price": 157.826,
+      "price": 157.887,
       "prev_close": 157.658,
-      "change": 0.168,
-      "change_pct": 0.107
+      "change": 0.229,
+      "change_pct": 0.145
     },
     {
       "id": "dxy",
@@ -139,10 +139,10 @@
       "hero": false,
       "description": "유로·엔·파운드 등 주요 6개 통화 대비 달러 가치를 가중평균한 지수. 달러 전반의 강약을 나타냄.",
       "unit": null,
-      "price": 99.755,
+      "price": 99.8,
       "prev_close": 99.732,
-      "change": 0.023,
-      "change_pct": 0.023
+      "change": 0.068,
+      "change_pct": 0.068
     },
     {
       "id": "wti",
@@ -152,10 +152,10 @@
       "hero": true,
       "description": "서부텍사스산 원유 선물가격. 미국 원유 벤치마크이며 글로벌 인플레이션·에너지 비용에 직결.",
       "unit": null,
-      "price": 75.43,
+      "price": 76.44,
       "prev_close": 74.99,
-      "change": 0.44,
-      "change_pct": 0.587
+      "change": 1.45,
+      "change_pct": 1.934
     },
     {
       "id": "gold",
@@ -165,10 +165,10 @@
       "hero": false,
       "description": "금 선물가격. 대표적인 안전자산으로 인플레이션 헤지·달러 약세 시 강세를 보이는 경향.",
       "unit": null,
-      "price": 4322.5,
+      "price": 4294.8999,
       "prev_close": 4324.8999,
-      "change": -2.3999,
-      "change_pct": -0.055
+      "change": -30.0,
+      "change_pct": -0.694
     },
     {
       "id": "vix",
@@ -178,10 +178,10 @@
       "hero": false,
       "description": "S&P500 옵션 가격에서 역산한 향후 30일 예상 변동성. '공포지수'로 불리며 시장 불안심리가 커지면 급등.",
       "unit": null,
-      "price": 15.88,
+      "price": 16.0,
       "prev_close": 15.82,
-      "change": 0.06,
-      "change_pct": 0.379
+      "change": 0.18,
+      "change_pct": 1.138
     },
     {
       "id": "move",
