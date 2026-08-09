@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-09T09:42:18.997889+09:00",
+  "updated_at": "2026-08-09T15:33:55.069391+09:00",
   "items": [
     {
       "id": "kospi",
@@ -113,10 +113,10 @@
       "hero": true,
       "description": "미국 달러 대비 원화 환율. 원화 가치가 오르면(환율 하락) 원/달러 값이 낮아짐.",
       "unit": null,
-      "price": 1407.45,
+      "price": 1415.7,
       "prev_close": 1422.96,
-      "change": -15.51,
-      "change_pct": -1.09
+      "change": -7.26,
+      "change_pct": -0.51
     },
     {
       "id": "usdjpy",
@@ -139,10 +139,10 @@
       "hero": false,
       "description": "유로·엔·파운드 등 주요 6개 통화 대비 달러 가치를 가중평균한 지수. 달러 전반의 강약을 나타냄.",
       "unit": null,
-      "price": 99.6,
+      "price": 99.604,
       "prev_close": 99.956,
-      "change": -0.356,
-      "change_pct": -0.356
+      "change": -0.352,
+      "change_pct": -0.352
     },
     {
       "id": "wti",
@@ -165,10 +165,10 @@
       "hero": false,
       "description": "금 선물가격. 대표적인 안전자산으로 인플레이션 헤지·달러 약세 시 강세를 보이는 경향.",
       "unit": null,
-      "price": 4340.7002,
+      "price": 4399.7002,
       "prev_close": 4322.7998,
-      "change": 17.9004,
-      "change_pct": 0.414
+      "change": 76.9004,
+      "change_pct": 1.779
     },
     {
       "id": "vix",
