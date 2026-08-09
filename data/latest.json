@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-09T21:22:03.063715+09:00",
+  "updated_at": "2026-08-10T03:20:47.435321+09:00",
   "items": [
     {
       "id": "kospi",
@@ -113,10 +113,10 @@
       "hero": true,
       "description": "미국 달러 대비 원화 환율. 원화 가치가 오르면(환율 하락) 원/달러 값이 낮아짐.",
       "unit": null,
-      "price": 1415.7,
+      "price": 1407.45,
       "prev_close": 1422.96,
-      "change": -7.26,
-      "change_pct": -0.51
+      "change": -15.51,
+      "change_pct": -1.09
     },
     {
       "id": "usdjpy",
