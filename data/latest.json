@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-11T21:35:10.474734+09:00",
+  "updated_at": "2026-08-12T03:41:56.419207+09:00",
   "items": [
     {
       "id": "kospi",
@@ -9,9 +9,9 @@
       "hero": true,
       "description": "한국거래소 유가증권시장 상장 전종목을 시가총액 가중으로 산출하는 한국 대표 주가지수.",
       "unit": null,
-      "price": 6345.5298,
+      "price": 6345.53,
       "prev_close": 6299.66,
-      "change": 45.8698,
+      "change": 45.87,
       "change_pct": 0.728
     },
     {
@@ -35,10 +35,10 @@
       "hero": true,
       "description": "미국 대형주 500개 종목의 시가총액 가중지수. 미국 증시와 글로벌 리스크자산의 벤치마크로 가장 널리 쓰임.",
       "unit": null,
-      "price": 7753.1099,
-      "prev_close": 7757.64,
-      "change": -4.5301,
-      "change_pct": -0.058
+      "price": 7719.9399,
+      "prev_close": 7753.1499,
+      "change": -33.21,
+      "change_pct": -0.428
     },
     {
       "id": "nasdaq",
@@ -48,10 +48,10 @@
       "hero": true,
       "description": "나스닥거래소 상장 전종목 지수. 대형 기술주 비중이 커서 기술주 심리를 잘 반영.",
       "unit": null,
-      "price": 26605.3594,
-      "prev_close": 26690.615,
-      "change": -85.2556,
-      "change_pct": -0.319
+      "price": 26383.0117,
+      "prev_close": 26605.357,
+      "change": -222.3453,
+      "change_pct": -0.836
     },
     {
       "id": "dow",
@@ -61,10 +61,10 @@
       "hero": false,
       "description": "미국 우량주 30종목의 주가평균식 지수. 역사가 가장 길지만 종목 수가 적어 대표성은 S&P500보다 낮음.",
       "unit": null,
-      "price": 53975.9805,
-      "prev_close": 54036.93,
-      "change": -60.9495,
-      "change_pct": -0.113
+      "price": 53816.9492,
+      "prev_close": 53967.5117,
+      "change": -150.5625,
+      "change_pct": -0.279
     },
     {
       "id": "us10y",
@@ -74,10 +74,10 @@
       "hero": true,
       "description": "미국 10년 만기 국채 수익률. 글로벌 금리·주식 밸류에이션·모기지 금리의 기준이 되는 핵심 지표.",
       "unit": null,
-      "price": 4.692,
+      "price": 4.686,
       "prev_close": 4.699,
-      "change": -0.007,
-      "change_pct": -0.149
+      "change": -0.013,
+      "change_pct": -0.277
     },
     {
       "id": "us30y",
@@ -87,10 +87,10 @@
       "hero": false,
       "description": "미국 30년 만기 국채 수익률. 장기 인플레이션 기대와 재정건전성 우려를 반영.",
       "unit": null,
-      "price": 5.243,
+      "price": 5.237,
       "prev_close": 5.243,
-      "change": 0.0,
-      "change_pct": 0.0
+      "change": -0.006,
+      "change_pct": -0.114
     },
     {
       "id": "us20y",
@@ -100,10 +100,10 @@
       "hero": false,
       "description": "만기 20년 이상 미국 장기국채에 투자하는 iShares ETF. 금리와 반대로 움직여 장기금리 프록시로 활용.",
       "unit": null,
-      "price": 82.06,
+      "price": 82.235,
       "prev_close": 82.1,
-      "change": -0.04,
-      "change_pct": -0.049
+      "change": 0.135,
+      "change_pct": 0.164
     },
     {
       "id": "usdkrw",
@@ -113,10 +113,10 @@
       "hero": true,
       "description": "미국 달러 대비 원화 환율. 원화 가치가 오르면(환율 하락) 원/달러 값이 낮아짐.",
       "unit": null,
-      "price": 1413.08,
+      "price": 1413.6801,
       "prev_close": 1417.9,
-      "change": -4.8201,
-      "change_pct": -0.34
+      "change": -4.22,
+      "change_pct": -0.298
     },
     {
       "id": "usdjpy",
@@ -126,10 +126,10 @@
       "hero": false,
       "description": "미국 달러 대비 일본 엔화 환율. 엔캐리트레이드·일본은행 통화정책과 밀접하게 연동.",
       "unit": null,
-      "price": 159.282,
+      "price": 159.294,
       "prev_close": 159.256,
-      "change": 0.026,
-      "change_pct": 0.016
+      "change": 0.038,
+      "change_pct": 0.024
     },
     {
       "id": "dxy",
@@ -139,10 +139,10 @@
       "hero": false,
       "description": "유로·엔·파운드 등 주요 6개 통화 대비 달러 가치를 가중평균한 지수. 달러 전반의 강약을 나타냄.",
       "unit": null,
-      "price": 99.868,
+      "price": 99.848,
       "prev_close": 99.793,
-      "change": 0.075,
-      "change_pct": 0.075
+      "change": 0.055,
+      "change_pct": 0.055
     },
     {
       "id": "wti",
@@ -152,10 +152,10 @@
       "hero": true,
       "description": "서부텍사스산 원유 선물가격. 미국 원유 벤치마크이며 글로벌 인플레이션·에너지 비용에 직결.",
       "unit": null,
-      "price": 82.73,
+      "price": 83.17,
       "prev_close": 82.12,
-      "change": 0.61,
-      "change_pct": 0.743
+      "change": 1.05,
+      "change_pct": 1.279
     },
     {
       "id": "gold",
@@ -165,10 +165,10 @@
       "hero": false,
       "description": "금 선물가격. 대표적인 안전자산으로 인플레이션 헤지·달러 약세 시 강세를 보이는 경향.",
       "unit": null,
-      "price": 4448.5,
+      "price": 4423.6001,
       "prev_close": 4477.0,
-      "change": -28.5,
-      "change_pct": -0.637
+      "change": -53.3999,
+      "change_pct": -1.193
     },
     {
       "id": "vix",
@@ -178,10 +178,10 @@
       "hero": false,
       "description": "S&P500 옵션 가격에서 역산한 향후 30일 예상 변동성. '공포지수'로 불리며 시장 불안심리가 커지면 급등.",
       "unit": null,
-      "price": 15.5,
+      "price": 15.29,
       "prev_close": 15.46,
-      "change": 0.04,
-      "change_pct": 0.259
+      "change": -0.17,
+      "change_pct": -1.1
     },
     {
       "id": "move",
@@ -204,10 +204,10 @@
       "hero": false,
       "description": "에너지·금속·농산물 등을 포괄하는 대표적 원자재 종합지수. 에너지(특히 원유) 비중이 매우 큼.",
       "unit": null,
-      "price": 687.9039,
+      "price": 688.9566,
       "prev_close": 687.9039,
-      "change": -0.0,
-      "change_pct": -0.0
+      "change": 1.0527,
+      "change_pct": 0.153
     },
     {
       "id": "macro_composite",
@@ -256,10 +256,10 @@
       "hero": false,
       "description": "아이폰 등 하드웨어와 서비스를 판매하는 미국 대형 기술주. 시가총액 최상위권.",
       "unit": null,
-      "price": 308.26,
+      "price": 303.5633,
       "prev_close": 307.5563,
-      "change": 0.7037,
-      "change_pct": 0.229
+      "change": -3.993,
+      "change_pct": -1.298
     },
     {
       "id": "nvidia",
@@ -269,10 +269,10 @@
       "hero": false,
       "description": "AI·데이터센터용 GPU 시장을 주도하는 반도체 기업. AI 테마 심리를 대표.",
       "unit": null,
-      "price": 217.55,
+      "price": 216.615,
       "prev_close": 217.99,
-      "change": -0.44,
-      "change_pct": -0.202
+      "change": -1.375,
+      "change_pct": -0.631
     },
     {
       "id": "tesla",
@@ -282,10 +282,10 @@
       "hero": false,
       "description": "전기차·자율주행·에너지저장 기업. 밸류에이션 변동성이 크고 CEO 이슈에 민감.",
       "unit": null,
-      "price": 330.88,
+      "price": 330.845,
       "prev_close": 330.3,
-      "change": 0.58,
-      "change_pct": 0.176
+      "change": 0.545,
+      "change_pct": 0.165
     }
   ]
 }
