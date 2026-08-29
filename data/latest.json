@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-29T20:50:34.509735+09:00",
+  "updated_at": "2026-08-30T00:48:35.781020+09:00",
   "items": [
     {
       "id": "kospi",
@@ -9,9 +9,9 @@
       "hero": true,
       "description": "한국거래소 유가증권시장 상장 전종목을 시가총액 가중으로 산출하는 한국 대표 주가지수.",
       "unit": null,
-      "price": 6788.88,
+      "price": 6788.8799,
       "prev_close": 6912.37,
-      "change": -123.49,
+      "change": -123.4901,
       "change_pct": -1.787
     },
     {
@@ -35,9 +35,9 @@
       "hero": true,
       "description": "미국 대형주 500개 종목의 시가총액 가중지수. 미국 증시와 글로벌 리스크자산의 벤치마크로 가장 널리 쓰임.",
       "unit": null,
-      "price": 7711.76,
+      "price": 7711.7598,
       "prev_close": 7730.99,
-      "change": -19.23,
+      "change": -19.2302,
       "change_pct": -0.249
     },
     {
@@ -48,9 +48,9 @@
       "hero": true,
       "description": "나스닥거래소 상장 전종목 지수. 대형 기술주 비중이 커서 기술주 심리를 잘 반영.",
       "unit": null,
-      "price": 26402.424,
+      "price": 26402.4199,
       "prev_close": 26541.352,
-      "change": -138.928,
+      "change": -138.9321,
       "change_pct": -0.523
     },
     {
@@ -61,9 +61,9 @@
       "hero": false,
       "description": "미국 우량주 30종목의 주가평균식 지수. 역사가 가장 길지만 종목 수가 적어 대표성은 S&P500보다 낮음.",
       "unit": null,
-      "price": 53560.0,
+      "price": 53559.9883,
       "prev_close": 53569.44,
-      "change": -9.44,
+      "change": -9.4517,
       "change_pct": -0.018
     },
     {
@@ -139,10 +139,10 @@
       "hero": false,
       "description": "유로·엔·파운드 등 주요 6개 통화 대비 달러 가치를 가중평균한 지수. 달러 전반의 강약을 나타냄.",
       "unit": null,
-      "price": 99.677,
+      "price": 99.7,
       "prev_close": 99.174,
-      "change": 0.503,
-      "change_pct": 0.507
+      "change": 0.526,
+      "change_pct": 0.53
     },
     {
       "id": "wti",
@@ -191,10 +191,10 @@
       "hero": false,
       "description": "미국 국채 옵션 기반 변동성 지수. 채권시장판 VIX로, 금리시장 불안 정도를 나타냄.",
       "unit": null,
-      "price": 70.965,
+      "price": 70.97,
       "prev_close": 69.8588,
-      "change": 1.1062,
-      "change_pct": 1.583
+      "change": 1.1112,
+      "change_pct": 1.591
     },
     {
       "id": "spgsci",
