@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-29T10:13:09.100336+09:00",
+  "updated_at": "2026-08-29T20:50:34.509735+09:00",
   "items": [
     {
       "id": "kospi",
@@ -35,9 +35,9 @@
       "hero": true,
       "description": "미국 대형주 500개 종목의 시가총액 가중지수. 미국 증시와 글로벌 리스크자산의 벤치마크로 가장 널리 쓰임.",
       "unit": null,
-      "price": 7711.7598,
+      "price": 7711.76,
       "prev_close": 7730.99,
-      "change": -19.2302,
+      "change": -19.23,
       "change_pct": -0.249
     },
     {
@@ -48,9 +48,9 @@
       "hero": true,
       "description": "나스닥거래소 상장 전종목 지수. 대형 기술주 비중이 커서 기술주 심리를 잘 반영.",
       "unit": null,
-      "price": 26402.4238,
+      "price": 26402.424,
       "prev_close": 26541.352,
-      "change": -138.9282,
+      "change": -138.928,
       "change_pct": -0.523
     },
     {
@@ -61,9 +61,9 @@
       "hero": false,
       "description": "미국 우량주 30종목의 주가평균식 지수. 역사가 가장 길지만 종목 수가 적어 대표성은 S&P500보다 낮음.",
       "unit": null,
-      "price": 53559.9883,
+      "price": 53560.0,
       "prev_close": 53569.44,
-      "change": -9.4517,
+      "change": -9.44,
       "change_pct": -0.018
     },
     {
@@ -113,10 +113,10 @@
       "hero": true,
       "description": "미국 달러 대비 원화 환율. 원화 가치가 오르면(환율 하락) 원/달러 값이 낮아짐.",
       "unit": null,
-      "price": 1375.67,
+      "price": 1371.5,
       "prev_close": 1381.03,
-      "change": -5.36,
-      "change_pct": -0.388
+      "change": -9.53,
+      "change_pct": -0.69
     },
     {
       "id": "usdjpy",
@@ -152,10 +152,10 @@
       "hero": true,
       "description": "서부텍사스산 원유 선물가격. 미국 원유 벤치마크이며 글로벌 인플레이션·에너지 비용에 직결.",
       "unit": null,
-      "price": 83.44,
+      "price": 83.4,
       "prev_close": 83.11,
-      "change": 0.33,
-      "change_pct": 0.397
+      "change": 0.29,
+      "change_pct": 0.349
     },
     {
       "id": "gold",
@@ -165,10 +165,10 @@
       "hero": false,
       "description": "금 선물가격. 대표적인 안전자산으로 인플레이션 헤지·달러 약세 시 강세를 보이는 경향.",
       "unit": null,
-      "price": 4504.1001,
+      "price": 4529.9,
       "prev_close": 4631.3999,
-      "change": -127.2998,
-      "change_pct": -2.749
+      "change": -101.4999,
+      "change_pct": -2.192
     },
     {
       "id": "vix",
@@ -191,10 +191,10 @@
       "hero": false,
       "description": "미국 국채 옵션 기반 변동성 지수. 채권시장판 VIX로, 금리시장 불안 정도를 나타냄.",
       "unit": null,
-      "price": 70.9655,
+      "price": 70.965,
       "prev_close": 69.8588,
-      "change": 1.1067,
-      "change_pct": 1.584
+      "change": 1.1062,
+      "change_pct": 1.583
     },
     {
       "id": "spgsci",
@@ -204,9 +204,9 @@
       "hero": false,
       "description": "에너지·금속·농산물 등을 포괄하는 대표적 원자재 종합지수. 에너지(특히 원유) 비중이 매우 큼.",
       "unit": null,
-      "price": 705.6394,
+      "price": 705.64,
       "prev_close": 704.1704,
-      "change": 1.469,
+      "change": 1.4696,
       "change_pct": 0.209
     },
     {
@@ -217,10 +217,10 @@
       "hero": false,
       "description": "유가·미국채10년금리·달러인덱스를 각각 표준화(z-score)해 평균한 자체 합성지수. 공식 지수가 아니라 이 대시보드에서 직접 계산한 값이며, 값이 높을수록 '유가·금리·달러가 동시에 평균보다 높은(매크로 긴축적인)' 국면임을 뜻함.",
       "unit": "zscore",
-      "price": 0.1642,
-      "prev_close": 0.1458,
-      "change": 0.0184,
-      "change_pct": 12.62
+      "price": 0.1691,
+      "prev_close": 0.1642,
+      "change": 0.0049,
+      "change_pct": 2.984
     },
     {
       "id": "samsung",
