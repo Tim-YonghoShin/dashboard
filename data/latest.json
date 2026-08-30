@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-30T10:56:02.061180+09:00",
+  "updated_at": "2026-08-30T19:47:20.867271+09:00",
   "items": [
     {
       "id": "kospi",
@@ -139,10 +139,10 @@
       "hero": false,
       "description": "유로·엔·파운드 등 주요 6개 통화 대비 달러 가치를 가중평균한 지수. 달러 전반의 강약을 나타냄.",
       "unit": null,
-      "price": 99.7,
+      "price": 99.677,
       "prev_close": 99.174,
-      "change": 0.526,
-      "change_pct": 0.53
+      "change": 0.503,
+      "change_pct": 0.507
     },
     {
       "id": "wti",
@@ -165,10 +165,10 @@
       "hero": false,
       "description": "금 선물가격. 대표적인 안전자산으로 인플레이션 헤지·달러 약세 시 강세를 보이는 경향.",
       "unit": null,
-      "price": 4478.1001,
+      "price": 4529.8999,
       "prev_close": 4631.3999,
-      "change": -153.2998,
-      "change_pct": -3.31
+      "change": -101.5,
+      "change_pct": -2.192
     },
     {
       "id": "vix",
