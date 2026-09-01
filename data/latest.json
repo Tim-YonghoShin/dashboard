@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-01T03:31:31.920016+09:00",
+  "updated_at": "2026-09-01T11:13:43.546782+09:00",
   "items": [
     {
       "id": "kospi",
@@ -9,10 +9,10 @@
       "hero": true,
       "description": "한국거래소 유가증권시장 상장 전종목을 시가총액 가중으로 산출하는 한국 대표 주가지수.",
       "unit": null,
-      "price": 6820.02,
-      "prev_close": 6788.88,
-      "change": 31.14,
-      "change_pct": 0.459
+      "price": 6802.52,
+      "prev_close": 6763.8701,
+      "change": 38.6499,
+      "change_pct": 0.571
     },
     {
       "id": "kosdaq",
@@ -22,10 +22,10 @@
       "hero": false,
       "description": "코스닥시장 상장 중소·벤처·기술주 중심 지수. 코스피보다 변동성이 크고 성장주 비중이 높음.",
       "unit": null,
-      "price": 834.29,
-      "prev_close": 838.41,
-      "change": -4.12,
-      "change_pct": -0.491
+      "price": 820.47,
+      "prev_close": 830.15,
+      "change": -9.6801,
+      "change_pct": -1.166
     },
     {
       "id": "sp500",
@@ -35,10 +35,10 @@
       "hero": true,
       "description": "미국 대형주 500개 종목의 시가총액 가중지수. 미국 증시와 글로벌 리스크자산의 벤치마크로 가장 널리 쓰임.",
       "unit": null,
-      "price": 7681.0698,
-      "prev_close": 7709.8999,
-      "change": -28.8301,
-      "change_pct": -0.374
+      "price": 7686.1401,
+      "prev_close": 7711.76,
+      "change": -25.6199,
+      "change_pct": -0.332
     },
     {
       "id": "nasdaq",
@@ -48,10 +48,10 @@
       "hero": true,
       "description": "나스닥거래소 상장 전종목 지수. 대형 기술주 비중이 커서 기술주 심리를 잘 반영.",
       "unit": null,
-      "price": 26300.9707,
+      "price": 26370.8887,
       "prev_close": 26402.424,
-      "change": -101.4533,
-      "change_pct": -0.384
+      "change": -31.5353,
+      "change_pct": -0.119
     },
     {
       "id": "dow",
@@ -61,10 +61,10 @@
       "hero": false,
       "description": "미국 우량주 30종목의 주가평균식 지수. 역사가 가장 길지만 종목 수가 적어 대표성은 S&P500보다 낮음.",
       "unit": null,
-      "price": 53245.6797,
-      "prev_close": 53546.7891,
-      "change": -301.1094,
-      "change_pct": -0.562
+      "price": 53185.8984,
+      "prev_close": 53559.99,
+      "change": -374.0916,
+      "change_pct": -0.698
     },
     {
       "id": "us10y",
@@ -74,10 +74,10 @@
       "hero": true,
       "description": "미국 10년 만기 국채 수익률. 글로벌 금리·주식 밸류에이션·모기지 금리의 기준이 되는 핵심 지표.",
       "unit": null,
-      "price": 4.756,
+      "price": 4.758,
       "prev_close": 4.72,
-      "change": 0.036,
-      "change_pct": 0.763
+      "change": 0.038,
+      "change_pct": 0.805
     },
     {
       "id": "us30y",
@@ -87,10 +87,10 @@
       "hero": false,
       "description": "미국 30년 만기 국채 수익률. 장기 인플레이션 기대와 재정건전성 우려를 반영.",
       "unit": null,
-      "price": 5.254,
+      "price": 5.249,
       "prev_close": 5.206,
-      "change": 0.048,
-      "change_pct": 0.922
+      "change": 0.043,
+      "change_pct": 0.826
     },
     {
       "id": "us20y",
@@ -100,10 +100,10 @@
       "hero": false,
       "description": "만기 20년 이상 미국 장기국채에 투자하는 iShares ETF. 금리와 반대로 움직여 장기금리 프록시로 활용.",
       "unit": null,
-      "price": 82.315,
+      "price": 82.52,
       "prev_close": 82.942,
-      "change": -0.627,
-      "change_pct": -0.756
+      "change": -0.422,
+      "change_pct": -0.509
     },
     {
       "id": "usdkrw",
@@ -113,10 +113,10 @@
       "hero": true,
       "description": "미국 달러 대비 원화 환율. 원화 가치가 오르면(환율 하락) 원/달러 값이 낮아짐.",
       "unit": null,
-      "price": 1368.01,
-      "prev_close": 1375.67,
-      "change": -7.66,
-      "change_pct": -0.557
+      "price": 1369.98,
+      "prev_close": 1368.0,
+      "change": 1.98,
+      "change_pct": 0.145
     },
     {
       "id": "usdjpy",
@@ -126,10 +126,10 @@
       "hero": false,
       "description": "미국 달러 대비 일본 엔화 환율. 엔캐리트레이드·일본은행 통화정책과 밀접하게 연동.",
       "unit": null,
-      "price": 159.74,
-      "prev_close": 160.038,
-      "change": -0.298,
-      "change_pct": -0.186
+      "price": 159.8,
+      "prev_close": 159.756,
+      "change": 0.044,
+      "change_pct": 0.028
     },
     {
       "id": "dxy",
@@ -139,10 +139,10 @@
       "hero": false,
       "description": "유로·엔·파운드 등 주요 6개 통화 대비 달러 가치를 가중평균한 지수. 달러 전반의 강약을 나타냄.",
       "unit": null,
-      "price": 99.405,
+      "price": 99.484,
       "prev_close": 99.597,
-      "change": -0.192,
-      "change_pct": -0.193
+      "change": -0.113,
+      "change_pct": -0.113
     },
     {
       "id": "wti",
@@ -152,10 +152,10 @@
       "hero": true,
       "description": "서부텍사스산 원유 선물가격. 미국 원유 벤치마크이며 글로벌 인플레이션·에너지 비용에 직결.",
       "unit": null,
-      "price": 85.7,
+      "price": 86.42,
       "prev_close": 85.09,
-      "change": 0.61,
-      "change_pct": 0.717
+      "change": 1.33,
+      "change_pct": 1.563
     },
     {
       "id": "gold",
@@ -165,10 +165,10 @@
       "hero": false,
       "description": "금 선물가격. 대표적인 안전자산으로 인플레이션 헤지·달러 약세 시 강세를 보이는 경향.",
       "unit": null,
-      "price": 4482.2998,
+      "price": 4493.7002,
       "prev_close": 4472.0,
-      "change": 10.2998,
-      "change_pct": 0.23
+      "change": 21.7002,
+      "change_pct": 0.485
     },
     {
       "id": "vix",
@@ -178,10 +178,10 @@
       "hero": false,
       "description": "S&P500 옵션 가격에서 역산한 향후 30일 예상 변동성. '공포지수'로 불리며 시장 불안심리가 커지면 급등.",
       "unit": null,
-      "price": 15.07,
+      "price": 14.92,
       "prev_close": 14.42,
-      "change": 0.65,
-      "change_pct": 4.508
+      "change": 0.5,
+      "change_pct": 3.467
     },
     {
       "id": "move",
@@ -191,10 +191,10 @@
       "hero": false,
       "description": "미국 국채 옵션 기반 변동성 지수. 채권시장판 VIX로, 금리시장 불안 정도를 나타냄.",
       "unit": null,
-      "price": 70.9655,
-      "prev_close": 69.8588,
-      "change": 1.1067,
-      "change_pct": 1.584
+      "price": 75.3193,
+      "prev_close": 70.9655,
+      "change": 4.3538,
+      "change_pct": 6.135
     },
     {
       "id": "spgsci",
@@ -204,10 +204,10 @@
       "hero": false,
       "description": "에너지·금속·농산물 등을 포괄하는 대표적 원자재 종합지수. 에너지(특히 원유) 비중이 매우 큼.",
       "unit": null,
-      "price": 717.2132,
+      "price": 716.7008,
       "prev_close": 705.64,
-      "change": 11.5732,
-      "change_pct": 1.64
+      "change": 11.0608,
+      "change_pct": 1.567
     },
     {
       "id": "macro_composite",
@@ -217,10 +217,10 @@
       "hero": false,
       "description": "유가·미국채10년금리·달러인덱스를 각각 표준화(z-score)해 평균한 자체 합성지수. 공식 지수가 아니라 이 대시보드에서 직접 계산한 값이며, 값이 높을수록 '유가·금리·달러가 동시에 평균보다 높은(매크로 긴축적인)' 국면임을 뜻함.",
       "unit": "zscore",
-      "price": 0.1691,
-      "prev_close": 0.1642,
-      "change": 0.0049,
-      "change_pct": 2.984
+      "price": 0.2204,
+      "prev_close": 0.1807,
+      "change": 0.0397,
+      "change_pct": 21.97
     },
     {
       "id": "samsung",
@@ -230,10 +230,10 @@
       "hero": false,
       "description": "한국 시가총액 1위 반도체·전자 기업. 코스피 지수에 대한 영향력이 압도적으로 큼.",
       "unit": null,
-      "price": 260000.0,
-      "prev_close": 257000.0,
+      "price": 259250.0,
+      "prev_close": 256250.0,
       "change": 3000.0,
-      "change_pct": 1.167
+      "change_pct": 1.171
     },
     {
       "id": "skhynix",
@@ -243,10 +243,10 @@
       "hero": false,
       "description": "메모리 반도체(D램·낸드) 전문 기업. 반도체 업황·AI 수요에 민감.",
       "unit": null,
-      "price": 1674000.0,
-      "prev_close": 1653000.0,
-      "change": 21000.0,
-      "change_pct": 1.27
+      "price": 1688000.0,
+      "prev_close": 1645000.0,
+      "change": 43000.0,
+      "change_pct": 2.614
     },
     {
       "id": "apple",
@@ -256,10 +256,10 @@
       "hero": false,
       "description": "아이폰 등 하드웨어와 서비스를 판매하는 미국 대형 기술주. 시가총액 최상위권.",
       "unit": null,
-      "price": 315.895,
+      "price": 316.85,
       "prev_close": 319.9,
-      "change": -4.005,
-      "change_pct": -1.252
+      "change": -3.05,
+      "change_pct": -0.953
     },
     {
       "id": "nvidia",
@@ -269,10 +269,10 @@
       "hero": false,
       "description": "AI·데이터센터용 GPU 시장을 주도하는 반도체 기업. AI 테마 심리를 대표.",
       "unit": null,
-      "price": 218.775,
+      "price": 220.78,
       "prev_close": 217.89,
-      "change": 0.885,
-      "change_pct": 0.406
+      "change": 2.89,
+      "change_pct": 1.326
     },
     {
       "id": "tesla",
@@ -282,10 +282,10 @@
       "hero": false,
       "description": "전기차·자율주행·에너지저장 기업. 밸류에이션 변동성이 크고 CEO 이슈에 민감.",
       "unit": null,
-      "price": 366.74,
+      "price": 367.95,
       "prev_close": 348.19,
-      "change": 18.55,
-      "change_pct": 5.328
+      "change": 19.76,
+      "change_pct": 5.675
     }
   ]
 }
