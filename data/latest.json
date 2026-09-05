@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-05T10:35:39.901570+09:00",
+  "updated_at": "2026-09-05T18:31:36.032748+09:00",
   "items": [
     {
       "id": "kospi",
@@ -113,10 +113,10 @@
       "hero": true,
       "description": "미국 달러 대비 원화 환율. 원화 가치가 오르면(환율 하락) 원/달러 값이 낮아짐.",
       "unit": null,
-      "price": 1345.99,
+      "price": 1351.1,
       "prev_close": 1356.35,
-      "change": -10.36,
-      "change_pct": -0.764
+      "change": -5.25,
+      "change_pct": -0.387
     },
     {
       "id": "usdjpy",
@@ -139,10 +139,10 @@
       "hero": false,
       "description": "유로·엔·파운드 등 주요 6개 통화 대비 달러 가치를 가중평균한 지수. 달러 전반의 강약을 나타냄.",
       "unit": null,
-      "price": 99.157,
+      "price": 99.16,
       "prev_close": 99.058,
-      "change": 0.099,
-      "change_pct": 0.1
+      "change": 0.102,
+      "change_pct": 0.103
     },
     {
       "id": "wti",
@@ -152,10 +152,10 @@
       "hero": true,
       "description": "서부텍사스산 원유 선물가격. 미국 원유 벤치마크이며 글로벌 인플레이션·에너지 비용에 직결.",
       "unit": null,
-      "price": 91.22,
+      "price": 91.48,
       "prev_close": 92.02,
-      "change": -0.8,
-      "change_pct": -0.869
+      "change": -0.54,
+      "change_pct": -0.587
     },
     {
       "id": "gold",
@@ -165,10 +165,10 @@
       "hero": false,
       "description": "금 선물가격. 대표적인 안전자산으로 인플레이션 헤지·달러 약세 시 강세를 보이는 경향.",
       "unit": null,
-      "price": 4477.2002,
+      "price": 4429.7998,
       "prev_close": 4513.7998,
-      "change": -36.5996,
-      "change_pct": -0.811
+      "change": -84.0,
+      "change_pct": -1.861
     },
     {
       "id": "vix",
@@ -191,10 +191,10 @@
       "hero": false,
       "description": "미국 국채 옵션 기반 변동성 지수. 채권시장판 VIX로, 금리시장 불안 정도를 나타냄.",
       "unit": null,
-      "price": 73.1045,
+      "price": 73.1,
       "prev_close": 74.6812,
-      "change": -1.5767,
-      "change_pct": -2.111
+      "change": -1.5812,
+      "change_pct": -2.117
     },
     {
       "id": "spgsci",
@@ -204,9 +204,9 @@
       "hero": false,
       "description": "에너지·금속·농산물 등을 포괄하는 대표적 원자재 종합지수. 에너지(특히 원유) 비중이 매우 큼.",
       "unit": null,
-      "price": 735.7515,
+      "price": 735.75,
       "prev_close": 737.1282,
-      "change": -1.3767,
+      "change": -1.3782,
       "change_pct": -0.187
     },
     {
