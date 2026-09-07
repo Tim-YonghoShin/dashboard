@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-07T19:50:32.998909+09:00",
+  "updated_at": "2026-09-08T01:43:40.890188+09:00",
   "items": [
     {
       "id": "kospi",
@@ -9,10 +9,10 @@
       "hero": true,
       "description": "한국거래소 유가증권시장 상장 전종목을 시가총액 가중으로 산출하는 한국 대표 주가지수.",
       "unit": null,
-      "price": 6995.3901,
+      "price": 6995.39,
       "prev_close": 6687.21,
-      "change": 308.1801,
-      "change_pct": 4.609
+      "change": 308.18,
+      "change_pct": 4.608
     },
     {
       "id": "kosdaq",
@@ -113,10 +113,10 @@
       "hero": true,
       "description": "미국 달러 대비 원화 환율. 원화 가치가 오르면(환율 하락) 원/달러 값이 낮아짐.",
       "unit": null,
-      "price": 1344.88,
+      "price": 1345.64,
       "prev_close": 1345.99,
-      "change": -1.11,
-      "change_pct": -0.082
+      "change": -0.35,
+      "change_pct": -0.026
     },
     {
       "id": "usdjpy",
@@ -126,10 +126,10 @@
       "hero": false,
       "description": "미국 달러 대비 일본 엔화 환율. 엔캐리트레이드·일본은행 통화정책과 밀접하게 연동.",
       "unit": null,
-      "price": 154.636,
+      "price": 154.282,
       "prev_close": 156.221,
-      "change": -1.585,
-      "change_pct": -1.015
+      "change": -1.939,
+      "change_pct": -1.241
     },
     {
       "id": "dxy",
@@ -139,10 +139,10 @@
       "hero": false,
       "description": "유로·엔·파운드 등 주요 6개 통화 대비 달러 가치를 가중평균한 지수. 달러 전반의 강약을 나타냄.",
       "unit": null,
-      "price": 98.95,
+      "price": 98.888,
       "prev_close": 99.157,
-      "change": -0.207,
-      "change_pct": -0.209
+      "change": -0.269,
+      "change_pct": -0.271
     },
     {
       "id": "wti",
@@ -178,10 +178,10 @@
       "hero": false,
       "description": "S&P500 옵션 가격에서 역산한 향후 30일 예상 변동성. '공포지수'로 불리며 시장 불안심리가 커지면 급등.",
       "unit": null,
-      "price": 15.04,
+      "price": 15.3,
       "prev_close": 14.52,
-      "change": 0.52,
-      "change_pct": 3.581
+      "change": 0.78,
+      "change_pct": 5.372
     },
     {
       "id": "move",
