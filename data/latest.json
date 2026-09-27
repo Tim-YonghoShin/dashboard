@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-27T11:04:13.389212+09:00",
+  "updated_at": "2026-09-27T19:54:23.562131+09:00",
   "items": [
     {
       "id": "kospi",
@@ -139,10 +139,10 @@
       "hero": false,
       "description": "유로·엔·파운드 등 주요 6개 통화 대비 달러 가치를 가중평균한 지수. 달러 전반의 강약을 나타냄.",
       "unit": null,
-      "price": 100.97,
+      "price": 101.035,
       "prev_close": 101.276,
-      "change": -0.306,
-      "change_pct": -0.302
+      "change": -0.241,
+      "change_pct": -0.238
     },
     {
       "id": "wti",
