@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-29T07:40:41.190384+09:00",
+  "updated_at": "2026-09-29T11:55:09.039120+09:00",
   "items": [
     {
       "id": "kospi",
@@ -9,10 +9,10 @@
       "hero": true,
       "description": "한국거래소 유가증권시장 상장 전종목을 시가총액 가중으로 산출하는 한국 대표 주가지수.",
       "unit": null,
-      "price": 6889.74,
-      "prev_close": 7080.92,
-      "change": -191.18,
-      "change_pct": -2.7
+      "price": 6860.2798,
+      "prev_close": 6912.21,
+      "change": -51.9302,
+      "change_pct": -0.751
     },
     {
       "id": "kosdaq",
@@ -22,10 +22,10 @@
       "hero": false,
       "description": "코스닥시장 상장 중소·벤처·기술주 중심 지수. 코스피보다 변동성이 크고 성장주 비중이 높음.",
       "unit": null,
-      "price": 846.58,
-      "prev_close": 844.48,
-      "change": 2.1,
-      "change_pct": 0.249
+      "price": 841.21,
+      "prev_close": 847.65,
+      "change": -6.44,
+      "change_pct": -0.76
     },
     {
       "id": "sp500",
@@ -113,10 +113,10 @@
       "hero": true,
       "description": "미국 달러 대비 원화 환율. 원화 가치가 오르면(환율 하락) 원/달러 값이 낮아짐.",
       "unit": null,
-      "price": 1359.72,
-      "prev_close": 1355.28,
-      "change": 4.4399,
-      "change_pct": 0.328
+      "price": 1359.08,
+      "prev_close": 1359.84,
+      "change": -0.76,
+      "change_pct": -0.056
     },
     {
       "id": "usdjpy",
@@ -126,10 +126,10 @@
       "hero": false,
       "description": "미국 달러 대비 일본 엔화 환율. 엔캐리트레이드·일본은행 통화정책과 밀접하게 연동.",
       "unit": null,
-      "price": 157.401,
-      "prev_close": 157.185,
-      "change": 0.216,
-      "change_pct": 0.137
+      "price": 157.386,
+      "prev_close": 157.433,
+      "change": -0.047,
+      "change_pct": -0.03
     },
     {
       "id": "dxy",
@@ -139,10 +139,10 @@
       "hero": false,
       "description": "유로·엔·파운드 등 주요 6개 통화 대비 달러 가치를 가중평균한 지수. 달러 전반의 강약을 나타냄.",
       "unit": null,
-      "price": 101.175,
+      "price": 101.198,
       "prev_close": 101.118,
-      "change": 0.057,
-      "change_pct": 0.056
+      "change": 0.08,
+      "change_pct": 0.079
     },
     {
       "id": "wti",
@@ -152,10 +152,10 @@
       "hero": true,
       "description": "서부텍사스산 원유 선물가격. 미국 원유 벤치마크이며 글로벌 인플레이션·에너지 비용에 직결.",
       "unit": null,
-      "price": 93.22,
+      "price": 93.91,
       "prev_close": 93.99,
-      "change": -0.77,
-      "change_pct": -0.819
+      "change": -0.08,
+      "change_pct": -0.085
     },
     {
       "id": "gold",
@@ -165,10 +165,10 @@
       "hero": false,
       "description": "금 선물가격. 대표적인 안전자산으로 인플레이션 헤지·달러 약세 시 강세를 보이는 경향.",
       "unit": null,
-      "price": 4155.6001,
+      "price": 4168.2002,
       "prev_close": 4230.5,
-      "change": -74.8999,
-      "change_pct": -1.77
+      "change": -62.2998,
+      "change_pct": -1.473
     },
     {
       "id": "vix",
@@ -217,10 +217,10 @@
       "hero": false,
       "description": "유가·미국채10년금리·달러인덱스를 각각 표준화(z-score)해 평균한 자체 합성지수. 공식 지수가 아니라 이 대시보드에서 직접 계산한 값이며, 값이 높을수록 '유가·금리·달러가 동시에 평균보다 높은(매크로 긴축적인)' 국면임을 뜻함.",
       "unit": "zscore",
-      "price": 0.3864,
-      "prev_close": 0.4194,
-      "change": -0.033,
-      "change_pct": -7.868
+      "price": 0.4098,
+      "prev_close": 0.3844,
+      "change": 0.0254,
+      "change_pct": 6.608
     },
     {
       "id": "samsung",
@@ -230,10 +230,10 @@
       "hero": false,
       "description": "한국 시가총액 1위 반도체·전자 기업. 코스피 지수에 대한 영향력이 압도적으로 큼.",
       "unit": null,
-      "price": 270000.0,
-      "prev_close": 285500.0,
-      "change": -15500.0,
-      "change_pct": -5.429
+      "price": 273500.0,
+      "prev_close": 271500.0,
+      "change": 2000.0,
+      "change_pct": 0.737
     },
     {
       "id": "skhynix",
@@ -243,10 +243,10 @@
       "hero": false,
       "description": "메모리 반도체(D램·낸드) 전문 기업. 반도체 업황·AI 수요에 민감.",
       "unit": null,
-      "price": 1768000.0,
-      "prev_close": 1862000.0,
-      "change": -94000.0,
-      "change_pct": -5.048
+      "price": 1770000.0,
+      "prev_close": 1780000.0,
+      "change": -10000.0,
+      "change_pct": -0.562
     },
     {
       "id": "apple",
