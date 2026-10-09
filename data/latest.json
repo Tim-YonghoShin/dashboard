@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-09T07:32:44.375413+09:00",
+  "updated_at": "2026-10-09T12:16:52.694739+09:00",
   "items": [
     {
       "id": "kospi",
@@ -9,9 +9,9 @@
       "hero": true,
       "description": "한국거래소 유가증권시장 상장 전종목을 시가총액 가중으로 산출하는 한국 대표 주가지수.",
       "unit": null,
-      "price": 6625.93,
+      "price": 6625.9302,
       "prev_close": 6803.9,
-      "change": -177.97,
+      "change": -177.9698,
       "change_pct": -2.616
     },
     {
@@ -61,9 +61,9 @@
       "hero": false,
       "description": "미국 우량주 30종목의 주가평균식 지수. 역사가 가장 길지만 종목 수가 적어 대표성은 S&P500보다 낮음.",
       "unit": null,
-      "price": 51231.6406,
+      "price": 51231.6016,
       "prev_close": 51179.87,
-      "change": 51.7706,
+      "change": 51.7316,
       "change_pct": 0.101
     },
     {
@@ -113,10 +113,10 @@
       "hero": true,
       "description": "미국 달러 대비 원화 환율. 원화 가치가 오르면(환율 하락) 원/달러 값이 낮아짐.",
       "unit": null,
-      "price": 1342.02,
-      "prev_close": 1339.54,
-      "change": 2.48,
-      "change_pct": 0.185
+      "price": 1342.26,
+      "prev_close": 1341.79,
+      "change": 0.47,
+      "change_pct": 0.035
     },
     {
       "id": "usdjpy",
@@ -126,10 +126,10 @@
       "hero": false,
       "description": "미국 달러 대비 일본 엔화 환율. 엔캐리트레이드·일본은행 통화정책과 밀접하게 연동.",
       "unit": null,
-      "price": 157.869,
-      "prev_close": 157.992,
-      "change": -0.123,
-      "change_pct": -0.078
+      "price": 158.027,
+      "prev_close": 157.881,
+      "change": 0.146,
+      "change_pct": 0.092
     },
     {
       "id": "dxy",
@@ -139,10 +139,10 @@
       "hero": false,
       "description": "유로·엔·파운드 등 주요 6개 통화 대비 달러 가치를 가중평균한 지수. 달러 전반의 강약을 나타냄.",
       "unit": null,
-      "price": 102.115,
+      "price": 102.024,
       "prev_close": 102.23,
-      "change": -0.115,
-      "change_pct": -0.112
+      "change": -0.206,
+      "change_pct": -0.202
     },
     {
       "id": "wti",
@@ -152,10 +152,10 @@
       "hero": true,
       "description": "서부텍사스산 원유 선물가격. 미국 원유 벤치마크이며 글로벌 인플레이션·에너지 비용에 직결.",
       "unit": null,
-      "price": 91.02,
+      "price": 90.68,
       "prev_close": 89.87,
-      "change": 1.15,
-      "change_pct": 1.28
+      "change": 0.81,
+      "change_pct": 0.901
     },
     {
       "id": "gold",
@@ -165,10 +165,10 @@
       "hero": false,
       "description": "금 선물가격. 대표적인 안전자산으로 인플레이션 헤지·달러 약세 시 강세를 보이는 경향.",
       "unit": null,
-      "price": 4160.8999,
+      "price": 4199.2002,
       "prev_close": 4160.3999,
-      "change": 0.5,
-      "change_pct": 0.012
+      "change": 38.8003,
+      "change_pct": 0.933
     },
     {
       "id": "vix",
@@ -191,9 +191,9 @@
       "hero": false,
       "description": "미국 국채 옵션 기반 변동성 지수. 채권시장판 VIX로, 금리시장 불안 정도를 나타냄.",
       "unit": null,
-      "price": 100.6994,
+      "price": 100.7,
       "prev_close": 102.5572,
-      "change": -1.8578,
+      "change": -1.8572,
       "change_pct": -1.811
     },
     {
@@ -217,10 +217,10 @@
       "hero": false,
       "description": "유가·미국채10년금리·달러인덱스를 각각 표준화(z-score)해 평균한 자체 합성지수. 공식 지수가 아니라 이 대시보드에서 직접 계산한 값이며, 값이 높을수록 '유가·금리·달러가 동시에 평균보다 높은(매크로 긴축적인)' 국면임을 뜻함.",
       "unit": "zscore",
-      "price": 0.3762,
-      "prev_close": 0.3738,
-      "change": 0.0024,
-      "change_pct": 0.642
+      "price": 0.3984,
+      "prev_close": 0.3687,
+      "change": 0.0297,
+      "change_pct": 8.055
     },
     {
       "id": "samsung",
