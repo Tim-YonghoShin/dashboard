@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-24T11:09:04.416991+09:00",
+  "updated_at": "2026-10-24T18:53:47.537332+09:00",
   "items": [
     {
       "id": "kospi",
@@ -48,9 +48,9 @@
       "hero": true,
       "description": "나스닥거래소 상장 전종목 지수. 대형 기술주 비중이 커서 기술주 심리를 잘 반영.",
       "unit": null,
-      "price": 25955.3418,
+      "price": 25955.3398,
       "prev_close": 26017.75,
-      "change": -62.4082,
+      "change": -62.4102,
       "change_pct": -0.24
     },
     {
@@ -113,10 +113,10 @@
       "hero": true,
       "description": "미국 달러 대비 원화 환율. 원화 가치가 오르면(환율 하락) 원/달러 값이 낮아짐.",
       "unit": null,
-      "price": 1323.66,
+      "price": 1325.4,
       "prev_close": 1325.0699,
-      "change": -1.4099,
-      "change_pct": -0.106
+      "change": 0.3301,
+      "change_pct": 0.025
     },
     {
       "id": "usdjpy",
@@ -139,10 +139,10 @@
       "hero": false,
       "description": "유로·엔·파운드 등 주요 6개 통화 대비 달러 가치를 가중평균한 지수. 달러 전반의 강약을 나타냄.",
       "unit": null,
-      "price": 101.752,
+      "price": 101.81,
       "prev_close": 101.643,
-      "change": 0.109,
-      "change_pct": 0.107
+      "change": 0.167,
+      "change_pct": 0.164
     },
     {
       "id": "wti",
@@ -152,10 +152,10 @@
       "hero": true,
       "description": "서부텍사스산 원유 선물가격. 미국 원유 벤치마크이며 글로벌 인플레이션·에너지 비용에 직결.",
       "unit": null,
-      "price": 103.44,
+      "price": 103.27,
       "prev_close": 99.99,
-      "change": 3.45,
-      "change_pct": 3.45
+      "change": 3.28,
+      "change_pct": 3.28
     },
     {
       "id": "gold",
@@ -165,10 +165,10 @@
       "hero": false,
       "description": "금 선물가격. 대표적인 안전자산으로 인플레이션 헤지·달러 약세 시 강세를 보이는 경향.",
       "unit": null,
-      "price": 4010.0,
+      "price": 4007.8999,
       "prev_close": 4030.1001,
-      "change": -20.1001,
-      "change_pct": -0.499
+      "change": -22.2002,
+      "change_pct": -0.551
     },
     {
       "id": "vix",
@@ -191,10 +191,10 @@
       "hero": false,
       "description": "미국 국채 옵션 기반 변동성 지수. 채권시장판 VIX로, 금리시장 불안 정도를 나타냄.",
       "unit": null,
-      "price": 103.3123,
+      "price": 103.31,
       "prev_close": 106.8525,
-      "change": -3.5402,
-      "change_pct": -3.313
+      "change": -3.5425,
+      "change_pct": -3.315
     },
     {
       "id": "spgsci",
@@ -204,9 +204,9 @@
       "hero": false,
       "description": "에너지·금속·농산물 등을 포괄하는 대표적 원자재 종합지수. 에너지(특히 원유) 비중이 매우 큼.",
       "unit": null,
-      "price": 762.0563,
+      "price": 762.06,
       "prev_close": 750.1958,
-      "change": 11.8605,
+      "change": 11.8642,
       "change_pct": 1.581
     },
     {
