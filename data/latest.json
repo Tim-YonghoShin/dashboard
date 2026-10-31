@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-31T06:43:39.600964+09:00",
+  "updated_at": "2026-10-31T11:54:28.234555+09:00",
   "items": [
     {
       "id": "kospi",
@@ -9,9 +9,9 @@
       "hero": true,
       "description": "한국거래소 유가증권시장 상장 전종목을 시가총액 가중으로 산출하는 한국 대표 주가지수.",
       "unit": null,
-      "price": 5730.74,
+      "price": 5730.7402,
       "prev_close": 5943.27,
-      "change": -212.53,
+      "change": -212.5298,
       "change_pct": -3.576
     },
     {
@@ -113,10 +113,10 @@
       "hero": true,
       "description": "미국 달러 대비 원화 환율. 원화 가치가 오르면(환율 하락) 원/달러 값이 낮아짐.",
       "unit": null,
-      "price": 1333.4399,
+      "price": 1337.98,
       "prev_close": 1338.48,
-      "change": -5.04,
-      "change_pct": -0.377
+      "change": -0.5,
+      "change_pct": -0.037
     },
     {
       "id": "usdjpy",
@@ -126,10 +126,10 @@
       "hero": false,
       "description": "미국 달러 대비 일본 엔화 환율. 엔캐리트레이드·일본은행 통화정책과 밀접하게 연동.",
       "unit": null,
-      "price": 157.519,
+      "price": 157.804,
       "prev_close": 157.818,
-      "change": -0.299,
-      "change_pct": -0.189
+      "change": -0.014,
+      "change_pct": -0.009
     },
     {
       "id": "dxy",
@@ -217,10 +217,10 @@
       "hero": false,
       "description": "유가·미국채10년금리·달러인덱스를 각각 표준화(z-score)해 평균한 자체 합성지수. 공식 지수가 아니라 이 대시보드에서 직접 계산한 값이며, 값이 높을수록 '유가·금리·달러가 동시에 평균보다 높은(매크로 긴축적인)' 국면임을 뜻함.",
       "unit": "zscore",
-      "price": 0.515,
-      "prev_close": 0.5363,
-      "change": -0.0213,
-      "change_pct": -3.972
+      "price": 0.5199,
+      "prev_close": 0.5157,
+      "change": 0.0042,
+      "change_pct": 0.814
     },
     {
       "id": "samsung",
