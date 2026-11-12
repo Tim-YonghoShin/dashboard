@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-12T08:45:39.213628+09:00",
+  "updated_at": "2026-11-12T13:31:41.692462+09:00",
   "items": [
     {
       "id": "kospi",
@@ -9,10 +9,10 @@
       "hero": true,
       "description": "한국거래소 유가증권시장 상장 전종목을 시가총액 가중으로 산출하는 한국 대표 주가지수.",
       "unit": null,
-      "price": 5375.36,
-      "prev_close": 5250.4399,
-      "change": 124.9201,
-      "change_pct": 2.379
+      "price": 5387.46,
+      "prev_close": 5372.4302,
+      "change": 15.0298,
+      "change_pct": 0.28
     },
     {
       "id": "kosdaq",
@@ -22,10 +22,10 @@
       "hero": false,
       "description": "코스닥시장 상장 중소·벤처·기술주 중심 지수. 코스피보다 변동성이 크고 성장주 비중이 높음.",
       "unit": null,
-      "price": 705.1,
-      "prev_close": 669.05,
-      "change": 36.05,
-      "change_pct": 5.388
+      "price": 698.38,
+      "prev_close": 702.98,
+      "change": -4.6,
+      "change_pct": -0.654
     },
     {
       "id": "sp500",
@@ -61,9 +61,9 @@
       "hero": false,
       "description": "미국 우량주 30종목의 주가평균식 지수. 역사가 가장 길지만 종목 수가 적어 대표성은 S&P500보다 낮음.",
       "unit": null,
-      "price": 52486.4883,
+      "price": 52486.5,
       "prev_close": 52233.7305,
-      "change": 252.7578,
+      "change": 252.7695,
       "change_pct": 0.484
     },
     {
@@ -113,10 +113,10 @@
       "hero": true,
       "description": "미국 달러 대비 원화 환율. 원화 가치가 오르면(환율 하락) 원/달러 값이 낮아짐.",
       "unit": null,
-      "price": 1336.24,
-      "prev_close": 1342.1801,
-      "change": -5.9401,
-      "change_pct": -0.443
+      "price": 1331.1801,
+      "prev_close": 1336.42,
+      "change": -5.24,
+      "change_pct": -0.392
     },
     {
       "id": "usdjpy",
@@ -126,10 +126,10 @@
       "hero": false,
       "description": "미국 달러 대비 일본 엔화 환율. 엔캐리트레이드·일본은행 통화정책과 밀접하게 연동.",
       "unit": null,
-      "price": 159.702,
-      "prev_close": 158.704,
-      "change": 0.998,
-      "change_pct": 0.629
+      "price": 159.716,
+      "prev_close": 159.743,
+      "change": -0.027,
+      "change_pct": -0.017
     },
     {
       "id": "dxy",
@@ -139,10 +139,10 @@
       "hero": false,
       "description": "유로·엔·파운드 등 주요 6개 통화 대비 달러 가치를 가중평균한 지수. 달러 전반의 강약을 나타냄.",
       "unit": null,
-      "price": 102.843,
+      "price": 103.005,
       "prev_close": 102.249,
-      "change": 0.594,
-      "change_pct": 0.581
+      "change": 0.756,
+      "change_pct": 0.739
     },
     {
       "id": "wti",
@@ -152,10 +152,10 @@
       "hero": true,
       "description": "서부텍사스산 원유 선물가격. 미국 원유 벤치마크이며 글로벌 인플레이션·에너지 비용에 직결.",
       "unit": null,
-      "price": 86.24,
+      "price": 85.37,
       "prev_close": 86.64,
-      "change": -0.4,
-      "change_pct": -0.462
+      "change": -1.27,
+      "change_pct": -1.466
     },
     {
       "id": "gold",
@@ -165,10 +165,10 @@
       "hero": false,
       "description": "금 선물가격. 대표적인 안전자산으로 인플레이션 헤지·달러 약세 시 강세를 보이는 경향.",
       "unit": null,
-      "price": 3986.8,
+      "price": 3984.8999,
       "prev_close": 4054.0,
-      "change": -67.2,
-      "change_pct": -1.658
+      "change": -69.1001,
+      "change_pct": -1.704
     },
     {
       "id": "vix",
@@ -217,10 +217,10 @@
       "hero": false,
       "description": "유가·미국채10년금리·달러인덱스를 각각 표준화(z-score)해 평균한 자체 합성지수. 공식 지수가 아니라 이 대시보드에서 직접 계산한 값이며, 값이 높을수록 '유가·금리·달러가 동시에 평균보다 높은(매크로 긴축적인)' 국면임을 뜻함.",
       "unit": "zscore",
-      "price": 0.3101,
-      "prev_close": 0.2864,
-      "change": 0.0237,
-      "change_pct": 8.275
+      "price": 0.3194,
+      "prev_close": 0.3027,
+      "change": 0.0167,
+      "change_pct": 5.517
     },
     {
       "id": "samsung",
@@ -230,10 +230,10 @@
       "hero": false,
       "description": "한국 시가총액 1위 반도체·전자 기업. 코스피 지수에 대한 영향력이 압도적으로 큼.",
       "unit": null,
-      "price": 206000.0,
-      "prev_close": 199600.0,
-      "change": 6400.0,
-      "change_pct": 3.206
+      "price": 210000.0,
+      "prev_close": 205500.0,
+      "change": 4500.0,
+      "change_pct": 2.19
     },
     {
       "id": "skhynix",
@@ -243,10 +243,10 @@
       "hero": false,
       "description": "메모리 반도체(D램·낸드) 전문 기업. 반도체 업황·AI 수요에 민감.",
       "unit": null,
-      "price": 1277000.0,
-      "prev_close": 1220000.0,
-      "change": 57000.0,
-      "change_pct": 4.672
+      "price": 1289000.0,
+      "prev_close": 1277000.0,
+      "change": 12000.0,
+      "change_pct": 0.94
     },
     {
       "id": "apple",
