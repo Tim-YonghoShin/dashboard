@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-14T07:57:12.912520+09:00",
+  "updated_at": "2026-11-14T12:44:39.292958+09:00",
   "items": [
     {
       "id": "kospi",
@@ -9,9 +9,9 @@
       "hero": true,
       "description": "한국거래소 유가증권시장 상장 전종목을 시가총액 가중으로 산출하는 한국 대표 주가지수.",
       "unit": null,
-      "price": 5290.53,
+      "price": 5290.5298,
       "prev_close": 5321.25,
-      "change": -30.72,
+      "change": -30.7202,
       "change_pct": -0.577
     },
     {
@@ -113,10 +113,10 @@
       "hero": true,
       "description": "미국 달러 대비 원화 환율. 원화 가치가 오르면(환율 하락) 원/달러 값이 낮아짐.",
       "unit": null,
-      "price": 1335.11,
+      "price": 1336.2,
       "prev_close": 1334.36,
-      "change": 0.75,
-      "change_pct": 0.056
+      "change": 1.84,
+      "change_pct": 0.138
     },
     {
       "id": "usdjpy",
@@ -126,10 +126,10 @@
       "hero": false,
       "description": "미국 달러 대비 일본 엔화 환율. 엔캐리트레이드·일본은행 통화정책과 밀접하게 연동.",
       "unit": null,
-      "price": 159.686,
+      "price": 159.875,
       "prev_close": 159.858,
-      "change": -0.172,
-      "change_pct": -0.108
+      "change": 0.017,
+      "change_pct": 0.011
     },
     {
       "id": "dxy",
@@ -179,9 +179,9 @@
       "description": "S&P500 옵션 가격에서 역산한 향후 30일 예상 변동성. '공포지수'로 불리며 시장 불안심리가 커지면 급등.",
       "unit": null,
       "price": 19.3,
-      "prev_close": 18.69,
-      "change": 0.61,
-      "change_pct": 3.264
+      "prev_close": 18.88,
+      "change": 0.42,
+      "change_pct": 2.225
     },
     {
       "id": "move",
@@ -217,10 +217,10 @@
       "hero": false,
       "description": "유가·미국채10년금리·달러인덱스를 각각 표준화(z-score)해 평균한 자체 합성지수. 공식 지수가 아니라 이 대시보드에서 직접 계산한 값이며, 값이 높을수록 '유가·금리·달러가 동시에 평균보다 높은(매크로 긴축적인)' 국면임을 뜻함.",
       "unit": "zscore",
-      "price": 0.3668,
-      "prev_close": 0.3272,
-      "change": 0.0396,
-      "change_pct": 12.103
+      "price": 0.3893,
+      "prev_close": 0.3753,
+      "change": 0.014,
+      "change_pct": 3.73
     },
     {
       "id": "samsung",
