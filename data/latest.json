@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-15T22:01:28.448659+09:00",
+  "updated_at": "2026-11-16T07:09:53.306257+09:00",
   "items": [
     {
       "id": "kospi",
@@ -113,10 +113,10 @@
       "hero": true,
       "description": "미국 달러 대비 원화 환율. 원화 가치가 오르면(환율 하락) 원/달러 값이 낮아짐.",
       "unit": null,
-      "price": 1336.2,
+      "price": 1335.28,
       "prev_close": 1334.36,
-      "change": 1.84,
-      "change_pct": 0.138
+      "change": 0.92,
+      "change_pct": 0.069
     },
     {
       "id": "usdjpy",
@@ -126,10 +126,10 @@
       "hero": false,
       "description": "미국 달러 대비 일본 엔화 환율. 엔캐리트레이드·일본은행 통화정책과 밀접하게 연동.",
       "unit": null,
-      "price": 159.875,
+      "price": 159.585,
       "prev_close": 159.858,
-      "change": 0.017,
-      "change_pct": 0.011
+      "change": -0.273,
+      "change_pct": -0.171
     },
     {
       "id": "dxy",
