@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-21T08:26:33.372152+09:00",
+  "updated_at": "2026-11-21T13:27:16.071844+09:00",
   "items": [
     {
       "id": "kospi",
@@ -11,7 +11,7 @@
       "unit": null,
       "price": 4869.96,
       "prev_close": 5084.9902,
-      "change": -215.0302,
+      "change": -215.0303,
       "change_pct": -4.229
     },
     {
@@ -113,10 +113,10 @@
       "hero": true,
       "description": "미국 달러 대비 원화 환율. 원화 가치가 오르면(환율 하락) 원/달러 값이 낮아짐.",
       "unit": null,
-      "price": 1346.13,
+      "price": 1334.79,
       "prev_close": 1334.3199,
-      "change": 11.8101,
-      "change_pct": 0.885
+      "change": 0.4701,
+      "change_pct": 0.035
     },
     {
       "id": "usdjpy",
@@ -126,10 +126,10 @@
       "hero": false,
       "description": "미국 달러 대비 일본 엔화 환율. 엔캐리트레이드·일본은행 통화정책과 밀접하게 연동.",
       "unit": null,
-      "price": 158.512,
+      "price": 159.707,
       "prev_close": 159.738,
-      "change": -1.226,
-      "change_pct": -0.768
+      "change": -0.031,
+      "change_pct": -0.019
     },
     {
       "id": "dxy",
@@ -139,10 +139,10 @@
       "hero": false,
       "description": "유로·엔·파운드 등 주요 6개 통화 대비 달러 가치를 가중평균한 지수. 달러 전반의 강약을 나타냄.",
       "unit": null,
-      "price": 103.807,
+      "price": 103.84,
       "prev_close": 103.788,
-      "change": 0.019,
-      "change_pct": 0.018
+      "change": 0.052,
+      "change_pct": 0.05
     },
     {
       "id": "wti",
@@ -217,10 +217,10 @@
       "hero": false,
       "description": "유가·미국채10년금리·달러인덱스를 각각 표준화(z-score)해 평균한 자체 합성지수. 공식 지수가 아니라 이 대시보드에서 직접 계산한 값이며, 값이 높을수록 '유가·금리·달러가 동시에 평균보다 높은(매크로 긴축적인)' 국면임을 뜻함.",
       "unit": "zscore",
-      "price": 0.3076,
-      "prev_close": 0.3131,
-      "change": -0.0055,
-      "change_pct": -1.757
+      "price": 0.2999,
+      "prev_close": 0.3117,
+      "change": -0.0118,
+      "change_pct": -3.786
     },
     {
       "id": "samsung",
