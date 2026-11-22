@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-22T12:41:19.606424+09:00",
+  "updated_at": "2026-11-22T22:40:27.117597+09:00",
   "items": [
     {
       "id": "kospi",
@@ -139,10 +139,10 @@
       "hero": false,
       "description": "유로·엔·파운드 등 주요 6개 통화 대비 달러 가치를 가중평균한 지수. 달러 전반의 강약을 나타냄.",
       "unit": null,
-      "price": 103.81,
+      "price": 103.84,
       "prev_close": 103.788,
-      "change": 0.022,
-      "change_pct": 0.021
+      "change": 0.052,
+      "change_pct": 0.05
     },
     {
       "id": "wti",
@@ -152,10 +152,10 @@
       "hero": true,
       "description": "서부텍사스산 원유 선물가격. 미국 원유 벤치마크이며 글로벌 인플레이션·에너지 비용에 직결.",
       "unit": null,
-      "price": 83.98,
+      "price": 83.41,
       "prev_close": 82.99,
-      "change": 0.99,
-      "change_pct": 1.193
+      "change": 0.42,
+      "change_pct": 0.506
     },
     {
       "id": "gold",
