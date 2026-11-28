@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-28T09:44:38.858774+09:00",
+  "updated_at": "2026-11-28T23:37:38.727854+09:00",
   "items": [
     {
       "id": "kospi",
@@ -9,9 +9,9 @@
       "hero": true,
       "description": "한국거래소 유가증권시장 상장 전종목을 시가총액 가중으로 산출하는 한국 대표 주가지수.",
       "unit": null,
-      "price": 4915.68,
+      "price": 4915.6802,
       "prev_close": 4740.2002,
-      "change": 175.4798,
+      "change": 175.48,
       "change_pct": 3.702
     },
     {
@@ -113,10 +113,10 @@
       "hero": true,
       "description": "미국 달러 대비 원화 환율. 원화 가치가 오르면(환율 하락) 원/달러 값이 낮아짐.",
       "unit": null,
-      "price": 1343.53,
+      "price": 1333.9,
       "prev_close": 1343.87,
-      "change": -0.34,
-      "change_pct": -0.025
+      "change": -9.97,
+      "change_pct": -0.742
     },
     {
       "id": "usdjpy",
@@ -126,10 +126,10 @@
       "hero": false,
       "description": "미국 달러 대비 일본 엔화 환율. 엔캐리트레이드·일본은행 통화정책과 밀접하게 연동.",
       "unit": null,
-      "price": 159.281,
+      "price": 159.515,
       "prev_close": 159.274,
-      "change": 0.007,
-      "change_pct": 0.004
+      "change": 0.241,
+      "change_pct": 0.151
     },
     {
       "id": "dxy",
@@ -139,10 +139,10 @@
       "hero": false,
       "description": "유로·엔·파운드 등 주요 6개 통화 대비 달러 가치를 가중평균한 지수. 달러 전반의 강약을 나타냄.",
       "unit": null,
-      "price": 104.014,
+      "price": 104.01,
       "prev_close": 103.81,
-      "change": 0.204,
-      "change_pct": 0.197
+      "change": 0.2,
+      "change_pct": 0.193
     },
     {
       "id": "wti",
@@ -165,10 +165,10 @@
       "hero": false,
       "description": "금 선물가격. 대표적인 안전자산으로 인플레이션 헤지·달러 약세 시 강세를 보이는 경향.",
       "unit": null,
-      "price": 3668.5,
+      "price": 3639.6001,
       "prev_close": 3620.3999,
-      "change": 48.1001,
-      "change_pct": 1.329
+      "change": 19.2002,
+      "change_pct": 0.53
     },
     {
       "id": "vix",
@@ -191,10 +191,10 @@
       "hero": false,
       "description": "미국 국채 옵션 기반 변동성 지수. 채권시장판 VIX로, 금리시장 불안 정도를 나타냄.",
       "unit": null,
-      "price": 95.2952,
+      "price": 95.3,
       "prev_close": 97.5367,
-      "change": -2.2415,
-      "change_pct": -2.298
+      "change": -2.2367,
+      "change_pct": -2.293
     },
     {
       "id": "spgsci",
@@ -204,9 +204,9 @@
       "hero": false,
       "description": "에너지·금속·농산물 등을 포괄하는 대표적 원자재 종합지수. 에너지(특히 원유) 비중이 매우 큼.",
       "unit": null,
-      "price": 656.3826,
+      "price": 656.38,
       "prev_close": 650.2956,
-      "change": 6.087,
+      "change": 6.0844,
       "change_pct": 0.936
     },
     {
@@ -217,10 +217,10 @@
       "hero": false,
       "description": "유가·미국채10년금리·달러인덱스를 각각 표준화(z-score)해 평균한 자체 합성지수. 공식 지수가 아니라 이 대시보드에서 직접 계산한 값이며, 값이 높을수록 '유가·금리·달러가 동시에 평균보다 높은(매크로 긴축적인)' 국면임을 뜻함.",
       "unit": "zscore",
-      "price": 0.2893,
-      "prev_close": 0.2769,
-      "change": 0.0124,
-      "change_pct": 4.478
+      "price": 0.2993,
+      "prev_close": 0.2893,
+      "change": 0.01,
+      "change_pct": 3.457
     },
     {
       "id": "samsung",
